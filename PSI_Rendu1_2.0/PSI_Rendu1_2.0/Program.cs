@@ -19,7 +19,7 @@ namespace PSI_Rendu1
                 return;
             }
 
-            Graphe graphe = new Graphe(34); // 34 est le nombre de nœuds dans le graphe "Karate Club"
+            Graphe graphe = new Graphe(34); /// 34 est le nombre de nœuds dans le graphe "Karate Club"
             graphe.ChargerDepuisFichier(filePath);
 
             Console.WriteLine("Analyse du graphe :");
