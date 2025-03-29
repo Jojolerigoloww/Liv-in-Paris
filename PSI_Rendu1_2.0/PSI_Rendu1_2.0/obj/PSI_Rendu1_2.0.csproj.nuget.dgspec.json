@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\basti\\Documents\\A2\\Pb Scientifique\\PSI_Rendu1_2.0\\PSI_Rendu1_2.0\\PSI_Rendu1_2.0.csproj": {}
+    "C:\\Users\\flold\\OneDrive\\Bureau\\Informatique\\Liv-in-Paris\\PSI_Rendu1_2.0\\PSI_Rendu1_2.0\\PSI_Rendu1_2.0.csproj": {}
   },
   "projects": {
-    "C:\\Users\\basti\\Documents\\A2\\Pb Scientifique\\PSI_Rendu1_2.0\\PSI_Rendu1_2.0\\PSI_Rendu1_2.0.csproj": {
+    "C:\\Users\\flold\\OneDrive\\Bureau\\Informatique\\Liv-in-Paris\\PSI_Rendu1_2.0\\PSI_Rendu1_2.0\\PSI_Rendu1_2.0.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\basti\\Documents\\A2\\Pb Scientifique\\PSI_Rendu1_2.0\\PSI_Rendu1_2.0\\PSI_Rendu1_2.0.csproj",
+        "projectUniqueName": "C:\\Users\\flold\\OneDrive\\Bureau\\Informatique\\Liv-in-Paris\\PSI_Rendu1_2.0\\PSI_Rendu1_2.0\\PSI_Rendu1_2.0.csproj",
         "projectName": "PSI_Rendu1_2.0",
-        "projectPath": "C:\\Users\\basti\\Documents\\A2\\Pb Scientifique\\PSI_Rendu1_2.0\\PSI_Rendu1_2.0\\PSI_Rendu1_2.0.csproj",
-        "packagesPath": "C:\\Users\\basti\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\basti\\Documents\\A2\\Pb Scientifique\\PSI_Rendu1_2.0\\PSI_Rendu1_2.0\\obj\\",
+        "projectPath": "C:\\Users\\flold\\OneDrive\\Bureau\\Informatique\\Liv-in-Paris\\PSI_Rendu1_2.0\\PSI_Rendu1_2.0\\PSI_Rendu1_2.0.csproj",
+        "packagesPath": "C:\\Users\\flold\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\flold\\OneDrive\\Bureau\\Informatique\\Liv-in-Paris\\PSI_Rendu1_2.0\\PSI_Rendu1_2.0\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\basti\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\flold\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -38,23 +38,11 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.200"
+        }
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "dependencies": {
-            "SkiaSharp": {
-              "target": "Package",
-              "version": "[3.116.1, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
@@ -66,12 +54,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

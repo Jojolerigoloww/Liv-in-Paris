@@ -1,12 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "hHtr8N4f7cI=",
+  "dgSpecHash": "TrNXiAUCwPPAgE5Rl8BlDS67P7rhy9McH2BAM/qYbnb+CgzIgOjTVnfLI9qc+ZmBuZvIm6wra/abXuPTTqF2dg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\basti\\Documents\\A2\\Pb Scientifique\\PSI_Rendu1_2.0\\PSI_Rendu1_2.0\\PSI_Rendu1_2.0.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\basti\\.nuget\\packages\\skiasharp\\3.116.1\\skiasharp.3.116.1.nupkg.sha512",
-    "C:\\Users\\basti\\.nuget\\packages\\skiasharp.nativeassets.macos\\3.116.1\\skiasharp.nativeassets.macos.3.116.1.nupkg.sha512",
-    "C:\\Users\\basti\\.nuget\\packages\\skiasharp.nativeassets.win32\\3.116.1\\skiasharp.nativeassets.win32.3.116.1.nupkg.sha512"
-  ],
+  "projectFilePath": "C:\\Users\\flold\\OneDrive\\Bureau\\Informatique\\Liv-in-Paris\\PSI_Rendu1_2.0\\PSI_Rendu1_2.0\\PSI_Rendu1_2.0.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }
