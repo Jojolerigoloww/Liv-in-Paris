@@ -12,10 +12,10 @@ namespace PSI_Rendu1
     {
         static void Main(string[] args)
         {
-            string filePath = "soc-karate.mtx";
+            string filePath = "MetroParis.xslx";
             if (!File.Exists(filePath))
             {
-                Console.WriteLine("Erreur : Fichier soc-karate.mtx introuvable.");
+                Console.WriteLine("Erreur : Fichier MetroParis.xlsx introuvable.");
                 return;
             }
 
