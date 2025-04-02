@@ -6,18 +6,20 @@ using System.Threading.Tasks;
 
 namespace PSI_Rendu1
 {
-    internal class Lien
+    internal class Lien<T>
     {
+        public Noeud<T> Noeud1 { get; private set; }
+        public Noeud<T> Noeud2 { get; private set; }
 
-        ///Création des deux attrributs de type Noeud
-        public Noeud Noeud1 { get; private set; }
-        public Noeud Noeud2 { get; private set; }
-
-        ///Constructeur de la classe Lien
-        public Lien(Noeud n1, Noeud n2)
+        public Lien(Noeud<T> noeud1, Noeud<T> noeud2)
         {
-            Noeud1 = n1;
-            Noeud2 = n2;
+            Noeud1 = noeud1;
+            Noeud2 = noeud2;
+        }
+
+        public string Decrire()
+        {
+            return $"Lien entre {Noeud1.Sommet} ({Noeud1.Libelle}) et {Noeud2.Sommet} ({Noeud2.Libelle})";
         }
     }
 }

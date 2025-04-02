@@ -183,3 +183,13 @@ C:\Users\basti\Documents\A2\Pb Scientifique\PSI_Rendu1_2.0\Test-PSI\obj\Debug\ne
 C:\Users\basti\Documents\A2\Pb Scientifique\PSI_Rendu1_2.0\Test-PSI\obj\Debug\net8.0\Test-PSI.pdb
 C:\Users\basti\Documents\A2\Pb Scientifique\PSI_Rendu1_2.0\Test-PSI\obj\Debug\net8.0\Test-PSI.genruntimeconfig.cache
 C:\Users\basti\Documents\A2\Pb Scientifique\PSI_Rendu1_2.0\Test-PSI\obj\Debug\net8.0\ref\Test-PSI.dll
+C:\Users\basti\Documents\GitHub\Liv-in-Paris\PSI_Rendu1_2.0\Test-PSI\bin\Debug\net8.0\.msCoverageSourceRootsMapping_Test-PSI
+C:\Users\basti\Documents\GitHub\Liv-in-Paris\PSI_Rendu1_2.0\Test-PSI\obj\Debug\net8.0\Test-PSI.csproj.AssemblyReference.cache
+C:\Users\basti\Documents\GitHub\Liv-in-Paris\PSI_Rendu1_2.0\Test-PSI\obj\Debug\net8.0\Test-PSI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\basti\Documents\GitHub\Liv-in-Paris\PSI_Rendu1_2.0\Test-PSI\obj\Debug\net8.0\Test-PSI.AssemblyInfoInputs.cache
+C:\Users\basti\Documents\GitHub\Liv-in-Paris\PSI_Rendu1_2.0\Test-PSI\obj\Debug\net8.0\Test-PSI.AssemblyInfo.cs
+C:\Users\basti\Documents\GitHub\Liv-in-Paris\PSI_Rendu1_2.0\Test-PSI\obj\Debug\net8.0\Test-PSI.csproj.CoreCompileInputs.cache
+C:\Users\basti\Documents\GitHub\Liv-in-Paris\PSI_Rendu1_2.0\Test-PSI\obj\Debug\net8.0\Test-PSI.sourcelink.json
+C:\Users\basti\Documents\GitHub\Liv-in-Paris\PSI_Rendu1_2.0\Test-PSI\obj\Debug\net8.0\Test-PSI.dll
+C:\Users\basti\Documents\GitHub\Liv-in-Paris\PSI_Rendu1_2.0\Test-PSI\obj\Debug\net8.0\refint\Test-PSI.dll
+C:\Users\basti\Documents\GitHub\Liv-in-Paris\PSI_Rendu1_2.0\Test-PSI\obj\Debug\net8.0\Test-PSI.pdb

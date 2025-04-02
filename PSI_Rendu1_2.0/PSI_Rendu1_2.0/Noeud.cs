@@ -6,15 +6,20 @@ using System.Threading.Tasks;
 
 namespace PSI_Rendu1
 {
-    internal class Noeud
+    internal class Noeud<T>
     {
-        ///Création de l'attribut de type int 
-        public int Sommet { get; private set; }
+        public T Sommet { get; private set; }
+        public string Libelle { get; private set; }
 
-        ///Constructeur de la classe Lien
-        public Noeud(int sommet)
+        public Noeud(T sommet, string libelle)
         {
             Sommet = sommet;
+            Libelle = libelle;
+        }
+
+        public string Decrire()
+        {
+            return $"Noeud: {Sommet}, Libellé: {Libelle}";
         }
     }
 }

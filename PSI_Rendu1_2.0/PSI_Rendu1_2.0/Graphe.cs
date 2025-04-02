@@ -13,39 +13,26 @@ using System.Security.Cryptography;
 
 namespace PSI_Rendu1
 {
-    internal class Graphe
+    internal class Graphe<T>
     {
-        ///Création des attributs : 1 dictionnaire de int et de Noeud, une liste de Lien, un dictionnaire de int et de liste de int (pour savoir avec quels sommets sont reliés chacun), et une matrice de int 
-        public Dictionary<int, Noeud> Noeuds { get; private set; } = new Dictionary<int, Noeud>();
-        public List<Lien> Liens { get; private set; } = new List<Lien>();
-        public Dictionary<int, List<int>> ListeAdjacence { get; private set; } = new Dictionary<int, List<int>>();
-        public int[,] MatriceAdjacence;
+        public Dictionary<T, Noeud<T>> Noeuds { get; private set; } = new Dictionary<T, Noeud<T>>();
+        public List<Lien<T>> Liens { get; private set; } = new List<Lien<T>>();
+        public Dictionary<T, List<T>> ListeAdjacence { get; private set; } = new Dictionary<T, List<T>>();
 
-        ///Constructeur de la classe Graphe 
-        public Graphe(int nombreNoeuds)
+        public void AjouterLien(T sommet1, T sommet2)
         {
-            MatriceAdjacence = new int[nombreNoeuds + 1, nombreNoeuds + 1];
-        }
+            if (!Noeuds.ContainsKey(sommet1)) Noeuds[sommet1] = new Noeud<T>(sommet1, sommet1.ToString());
+            if (!Noeuds.ContainsKey(sommet2)) Noeuds[sommet2] = new Noeud<T>(sommet2, sommet2.ToString());
 
-        ///Fonction AjouterLien qui permet de rajouter de créer des liens et qui remplit les attributs qui évoluent avec le nouveau lien et les nouveaux sommets
-        public void AjouterLien(int sommet1, int sommet2)
-        {
-            if (!Noeuds.ContainsKey(sommet1)) Noeuds[sommet1] = new Noeud(sommet1);
-            if (!Noeuds.ContainsKey(sommet2)) Noeuds[sommet2] = new Noeud(sommet2);
+            Liens.Add(new Lien<T>(Noeuds[sommet1], Noeuds[sommet2]));
 
-            Liens.Add(new Lien(Noeuds[sommet1], Noeuds[sommet2]));
-
-            if (!ListeAdjacence.ContainsKey(sommet1)) ListeAdjacence[sommet1] = new List<int>();
-            if (!ListeAdjacence.ContainsKey(sommet2)) ListeAdjacence[sommet2] = new List<int>();
+            if (!ListeAdjacence.ContainsKey(sommet1)) ListeAdjacence[sommet1] = new List<T>();
+            if (!ListeAdjacence.ContainsKey(sommet2)) ListeAdjacence[sommet2] = new List<T>();
 
             ListeAdjacence[sommet1].Add(sommet2);
             ListeAdjacence[sommet2].Add(sommet1);
-
-            MatriceAdjacence[sommet1, sommet2] = 1;
-            MatriceAdjacence[sommet2, sommet1] = 1;
         }
 
-        ///Fonction AnalyserGraphe qui donne des propriétés du graphe
         public void AnalyserGraphe()
         {
             int ordre = Noeuds.Count;
@@ -63,23 +50,78 @@ namespace PSI_Rendu1
             Console.WriteLine($"Graphe connexe (DFS): {estConnexeDFS}");
         }
 
-        /// Fonction de parcours en largeur
-        public HashSet<int> ParcoursBFS(int sommetDepart)
+        public void ChargerNoeudsDepuisCSV(string filepath)
         {
-            HashSet<int> visites = new HashSet<int>();
-            Queue<int> file = new Queue<int>();
+            using (var reader = new StreamReader(filepath))
+            {
+                string headerLine = reader.ReadLine(); // Lire la première ligne contenant les intitulés
+                if (headerLine == null) return;
+
+                string[] headers = headerLine.Split(';');
+
+                int indexSommet = Array.IndexOf(headers, "ID Station");
+                string indexLibelle = Array.IndexOf(headers, "Libelle station");
+
+                if (indexSommet == -1 || indexLibelle == -1)
+                {
+                    Console.WriteLine("Erreur : Colonnes requises non trouvées dans le fichier.");
+                    return;
+                }
+
+                while (!reader.EndOfStream)
+                {
+                    string line = reader.ReadLine();
+                    string[] tokens = line.Split(';');
+                    if (tokens.Length > Math.Max(indexSommet, indexLibelle))
+                    {
+                        T noeud = (T)Convert.ChangeType(tokens[indexSommet].Trim(), typeof(T));
+                        string libelle = tokens[indexLibelle].Trim();
+                        if (!Noeuds.ContainsKey(noeud))
+                        {
+                            Noeuds[noeud] = new Noeud<T>(noeud, libelle);
+                        }
+                    }
+                }
+            }
+        }
+
+
+
+
+        public void ChargerArcsDepuisCSV(string filepath)
+        {
+            using (var reader = new StreamReader(filepath))
+            {
+                while (!reader.EndOfStream)
+                {
+                    string line = reader.ReadLine();
+                    string[] tokens = line.Split(',');
+                    if (tokens.Length >= 2)
+                    {
+                        T sommet1 = (T)Convert.ChangeType(tokens[0].Trim(), typeof(T));
+                        T sommet2 = (T)Convert.ChangeType(tokens[1].Trim(), typeof(T));
+                        AjouterLien(sommet1, sommet2);
+                    }
+                }
+            }
+        }
+
+        public HashSet<T> ParcoursBFS(T sommetDepart)
+        {
+            HashSet<T> visites = new HashSet<T>();
+            Queue<T> file = new Queue<T>();
 
             file.Enqueue(sommetDepart);
 
             while (file.Count > 0)
             {
-                int sommet = file.Dequeue();
+                T sommet = file.Dequeue();
                 if (!visites.Contains(sommet))
                 {
                     visites.Add(sommet);
                     if (ListeAdjacence.ContainsKey(sommet))
                     {
-                        foreach (int voisin in ListeAdjacence[sommet])
+                        foreach (T voisin in ListeAdjacence[sommet])
                         {
                             if (!visites.Contains(voisin))
                             {
@@ -92,23 +134,32 @@ namespace PSI_Rendu1
             return visites;
         }
 
-        /// Fonction de parcours en profondeur
-        public HashSet<int> ParcoursDFS(int sommetDepart)
+        public bool EstConnexeBFS()
         {
-            HashSet<int> visites = new HashSet<int>();
-            Stack<int> pile = new Stack<int>();
+            if (Noeuds.Count == 0) return false;
+
+            T premierSommet = Noeuds.Keys.First();
+            HashSet<T> visites = ParcoursBFS(premierSommet);
+
+            return visites.Count == Noeuds.Count;
+        }
+
+        public HashSet<T> ParcoursDFS(T sommetDepart)
+        {
+            HashSet<T> visites = new HashSet<T>();
+            Stack<T> pile = new Stack<T>();
 
             pile.Push(sommetDepart);
 
             while (pile.Count > 0)
             {
-                int sommet = pile.Pop();
+                T sommet = pile.Pop();
                 if (!visites.Contains(sommet))
                 {
                     visites.Add(sommet);
                     if (ListeAdjacence.ContainsKey(sommet))
                     {
-                        foreach (int voisin in ListeAdjacence[sommet])
+                        foreach (T voisin in ListeAdjacence[sommet])
                         {
                             if (!visites.Contains(voisin))
                             {
@@ -121,37 +172,42 @@ namespace PSI_Rendu1
             return visites;
         }
 
-        /// Vérifie si le graphe est connexe avec BFS
-        public bool EstConnexeBFS()
-        {
-            if (Noeuds.Count == 0) return false;
-
-            int premierSommet = Noeuds.Keys.First(); /// Prend un premier sommet quelconque
-            HashSet<int> visites = ParcoursBFS(premierSommet);
-
-            return visites.Count == Noeuds.Count;
-        }
-
-        /// Vérifie si le graphe est connexe avec DFS
         public bool EstConnexeDFS()
         {
             if (Noeuds.Count == 0) return false;
 
-            int premierSommet = Noeuds.Keys.First(); /// Prend un premier sommet quelconque
-            HashSet<int> visites = ParcoursDFS(premierSommet);
+            T premierSommet = Noeuds.Keys.First();
+            HashSet<T> visites = ParcoursDFS(premierSommet);
 
             return visites.Count == Noeuds.Count;
         }
 
+
+        public void DecrireNoeuds()
+        {
+            Console.WriteLine("Noeuds du graphe :");
+            foreach (var noeud in Noeuds.Values)
+            {
+                Console.WriteLine(noeud.Decrire());
+            }
+        }
+
+        public void DecrireLiens()
+        {
+            Console.WriteLine("Liens du graphe :");
+            foreach (var lien in Liens)
+            {
+                Console.WriteLine(lien.Decrire());
+            }
+        }
+
+
         ///Fonction VisualiserGraphe qui permet de créer le graphe grâce à SkiaSharp
         public void VisualiserGraphe(string filePath)
         {
-            int largeur = 800;
-            int hauteur = 800;
-            int rayon = 300;
-            int centreX = largeur / 2;
-            int centreY = hauteur / 2;
-            int nombreNoeuds = Noeuds.Count;
+            int largeur = 1600;
+            int hauteur = 1600;
+            Random rand = new Random();
 
             using (SKBitmap bitmap = new SKBitmap(largeur, hauteur))
             using (SKCanvas canvas = new SKCanvas(bitmap))
@@ -160,21 +216,15 @@ namespace PSI_Rendu1
             using (SKPaint paintTexte = new SKPaint { Color = SKColors.White, TextSize = 20 })
             {
                 canvas.Clear(SKColors.White);
-                Dictionary<int, SKPoint> positions = new Dictionary<int, SKPoint>();
 
-
-                ///Positionnement des sommets du graphe :
-                int index = 0;
+                Dictionary<T, SKPoint> positions = new Dictionary<T, SKPoint>();
                 foreach (var noeud in Noeuds.Values)
                 {
-                    double angle = 2 * Math.PI * index / nombreNoeuds;
-                    float x = (float)(centreX + rayon * Math.Cos(angle));
-                    float y = (float)(centreY + rayon * Math.Sin(angle));
+                    float x = rand.Next(50, largeur - 50);
+                    float y = rand.Next(50, hauteur - 50);
                     positions[noeud.Sommet] = new SKPoint(x, y);
-                    index++;
                 }
 
-                ///Création des lignes pour relier les sommets qui sont adjacents :
                 foreach (var lien in Liens)
                 {
                     canvas.DrawLine(positions[lien.Noeud1.Sommet], positions[lien.Noeud2.Sommet], paintLien);
@@ -183,8 +233,8 @@ namespace PSI_Rendu1
                 foreach (var noeud in Noeuds.Values)
                 {
                     SKPoint position = positions[noeud.Sommet];
-                    canvas.DrawCircle(position, 20, paintNoeud);
-                    canvas.DrawText(noeud.Sommet.ToString(), position.X - 10, position.Y + 5, paintTexte);
+                    canvas.DrawCircle(position, 5, paintNoeud);
+                    canvas.DrawText(noeud.Sommet.ToString(), position.X + 5, position.Y - 5, paintTexte);
                 }
 
                 using (SKFileWStream fs = new SKFileWStream(filePath))
@@ -192,26 +242,6 @@ namespace PSI_Rendu1
                     bitmap.Encode(fs, SKEncodedImageFormat.Png, 100);
                 }
             }
-        }
-
-        ///Fonction ChargerDepuisFichier qui permet de remplir les attributs avec un fichier de liens
-        public void ChargerDepuisFichier(string filepath)
-        {
-            using (StreamReader sr = new StreamReader(filepath))
-            {
-                string ligne;
-                while ((ligne = sr.ReadLine()) != null)
-                {
-                    if (ligne.StartsWith("%")) continue;
-                    string[] tokens = ligne.Split(' ');
-                    if (tokens.Length >= 2)
-                    {
-                        int sommet1 = int.Parse(tokens[0]);
-                        int sommet2 = int.Parse(tokens[1]);
-                        AjouterLien(sommet1, sommet2);
-                    }
-                }
-            }       
         }
     }
 }
