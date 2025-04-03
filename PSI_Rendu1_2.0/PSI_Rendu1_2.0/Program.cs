@@ -21,22 +21,22 @@ namespace PSI_Rendu1
                 Console.WriteLine("Erreur : Fichiers CSV introuvables.");
                 return;
             }
-            
 
-            Graphe<string> graphe = new Graphe<string>();
+            Graphe graphe = new Graphe();
             graphe.DecrireNoeuds();
             graphe.DecrireLiens();
 
             graphe.ChargerNoeudsDepuisCSV(noeudsFilePath);
             graphe.ChargerArcsDepuisCSV(arcsFilePath);
 
-            Console.WriteLine("Analyse du graphe :");
-            graphe.AnalyserGraphe();
+            //Console.WriteLine("Analyse du graphe :");
+            //graphe.AnalyserGraphe();
 
             graphe.VisualiserGraphe("graphe.png");
             Console.WriteLine("Le graphe a été généré sous 'graphe.png'.");
 
             Console.ReadLine();
+ 
         }
     }
 }
