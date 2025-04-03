@@ -20,7 +20,7 @@ namespace PSI_Rendu1
     {
         public Dictionary<int, Noeud> Noeuds { get; private set; } = new Dictionary<int, Noeud>();
         public List<Lien> Liens { get; private set; } = new List<Lien>();
-        public Dictionary<int, List<int>> ListeAdjacence { get; private set; } = new Dictionary<int, List<int>>();
+        private Dictionary<int, Dictionary<int, float>> ListeAdjacence = new Dictionary<int, Dictionary<int, float>>();
         private Dictionary<string, SKColor> CouleursLignes = new Dictionary<string, SKColor>
     {
         { "1", new SKColor(255, 206, 0) },     // Jaune
@@ -53,20 +53,26 @@ namespace PSI_Rendu1
             return CouleursLignes["default"];
         }
 
-        public void AjouterLien(int sommet1, int sommet2)
+        public void AjouterLien(int sommet1, int sommet2, float poids)
         {
             if (!Noeuds.ContainsKey(sommet1) || !Noeuds.ContainsKey(sommet2)) return;
 
-            Liens.Add(new Lien(Noeuds[sommet1], Noeuds[sommet2]));
+            // Ajouter le lien
+            Liens.Add(new Lien(Noeuds[sommet1], Noeuds[sommet2], poids));
 
-            if (!ListeAdjacence.ContainsKey(sommet1)) ListeAdjacence[sommet1] = new List<int>();
-            if (!ListeAdjacence.ContainsKey(sommet2)) ListeAdjacence[sommet2] = new List<int>();
+            // Modifier la structure de la liste d'adjacence pour inclure les poids
+            // On utilise maintenant un dictionnaire de dictionnaires: sommet -> (voisin -> poids)
+            if (!ListeAdjacence.ContainsKey(sommet1))
+                ListeAdjacence[sommet1] = new Dictionary<int, float>();
+            if (!ListeAdjacence.ContainsKey(sommet2))
+                ListeAdjacence[sommet2] = new Dictionary<int, float>();
 
-            ListeAdjacence[sommet1].Add(sommet2);
-            ListeAdjacence[sommet2].Add(sommet1);
+            // Ajouter les arêtes avec leur poids dans les deux directions (graphe non orienté)
+            ListeAdjacence[sommet1][sommet2] = poids;
+            ListeAdjacence[sommet2][sommet1] = poids;
         }
 
-        public void AjouterNoeud(int sommet, string libelle, double longitude, double latitude, string idLigne = "default")
+        public void AjouterNoeud(int sommet, string libelle, double longitude, double latitude, string idLigne, double tempsChangement)
         {
             if (!Noeuds.ContainsKey(sommet))
             {
@@ -76,7 +82,8 @@ namespace PSI_Rendu1
                     libelle,
                     longitude,
                     latitude,
-                    idLigne
+                    idLigne,
+                    tempsChangement
                 );
             }
         }
@@ -213,6 +220,8 @@ namespace PSI_Rendu1
         }
 
 
+
+
         public void ChargerNoeudsDepuisCSV(string filepath)
         {
             using (var reader = new StreamReader(filepath))
@@ -222,24 +231,20 @@ namespace PSI_Rendu1
                 {
                     string line = reader.ReadLine();
                     string[] tokens = line.Split(';');
-                    if (tokens.Length >= 5) // Au moins 6 colonnes pour inclure l'ID de ligne
+                    if (tokens.Length >= 8)
                     {
                         int sommet = int.Parse(tokens[0].Trim());
                         string libelle = tokens[2].Trim();
                         double longitude = double.Parse(tokens[3].Trim().Replace("\uFEFF", ""), CultureInfo.InvariantCulture);
                         double latitude = double.Parse(tokens[4].Trim().Replace("\uFEFF", ""), CultureInfo.InvariantCulture);
                         string idLigne = tokens[1].Trim();
+                        double tempsChangement = 0; // Valeur par défaut
+                        if (tokens.Length > 8 && double.TryParse(tokens[8].Trim(), out double temp))
+                        {
+                            tempsChangement = temp;
+                        }
 
-                        AjouterNoeud(sommet, libelle, longitude, latitude, idLigne);
-                    }
-                    else if (tokens.Length >= 4) // Rétrocompatibilité avec l'ancien format sans ID de ligne
-                    {
-                        int sommet = int.Parse(tokens[0].Trim());
-                        string libelle = tokens[2].Trim();
-                        double longitude = double.Parse(tokens[3].Trim().Replace("\uFEFF", ""), CultureInfo.InvariantCulture);
-                        double latitude = double.Parse(tokens[4].Trim().Replace("\uFEFF", ""), CultureInfo.InvariantCulture);
-
-                        AjouterNoeud(sommet, libelle, longitude, latitude, "default");
+                        AjouterNoeud(sommet, libelle, longitude, latitude, idLigne, tempsChangement);
                     }
                 }
             }
@@ -262,32 +267,295 @@ namespace PSI_Rendu1
                     }
 
                     string[] tokens = line.Split(';');
-                    if (tokens.Length >= 3)
+                    if (tokens.Length >= 4)
                     {
                         if (tokens[2] == null || tokens[2].Length == 0)
                         {
                             int sommet1 = int.Parse(tokens[0].Trim());
                             int sommet3 = int.Parse(tokens[3].Trim());
-                            AjouterLien(sommet1, sommet3);
+                            //AjouterLien(sommet1, sommet3);
                         }
                         else if (tokens[3] == null || tokens[3].Length == 0)
                         {
                             int sommet1 = int.Parse(tokens[0].Trim());
                             int sommet2 = int.Parse(tokens[2].Trim());
-                            AjouterLien(sommet1, sommet2);
+                            float poids = float.Parse(tokens[4].Trim());
+                            AjouterLien(sommet1, sommet2, poids);
                         }
                         else if (tokens[2] != null && tokens[3] != null && tokens[0] != null)
                         {
                             int sommet1 = int.Parse(tokens[0].Trim());
                             int sommet2 = int.Parse(tokens[2].Trim());
                             int sommet3 = int.Parse(tokens[3].Trim());
-                            AjouterLien(sommet1, sommet2);
-                            AjouterLien(sommet1, sommet3);
+                            float poids = float.Parse(tokens[4].Trim());
+                            AjouterLien(sommet1, sommet2, poids);
+                            AjouterLien(sommet1, sommet3, poids);
                         }  
                     }
                 }
             }
         }
+
+
+        public (List<string>, double, List<(string, string, double)>) AlgoDjikstra(string stationDepart, string stationArrivee)
+        {
+            var distances = new Dictionary<int, double>();
+            var predecesseurs = new Dictionary<int, int>();
+            var visite = new HashSet<int>();
+            var filePriorite = new SortedSet<(double, int)>();
+            var sommetsDepart = Noeuds.Values.Where(n => n.Libelle == stationDepart).Select(n => n.Sommet).ToList();
+            var sommetsArrivee = Noeuds.Values.Where(n => n.Libelle == stationArrivee).Select(n => n.Sommet).ToList();
+
+            if (!sommetsDepart.Any() || !sommetsArrivee.Any())
+            {
+                Console.WriteLine("Station de départ ou d'arrivée introuvable.");
+                return (new List<string>(), 0, new List<(string, string, double)>());
+            }
+
+            foreach (var noeud in Noeuds.Keys)
+            {
+                distances[noeud] = double.PositiveInfinity;
+                predecesseurs[noeud] = -1;
+            }
+
+            foreach (var sommet in sommetsDepart)
+            {
+                distances[sommet] = 0;
+                filePriorite.Add((0, sommet));
+            }
+
+            while (filePriorite.Count > 0)
+            {
+                var (distanceActuelle, sommetActuel) = filePriorite.Min;
+                filePriorite.Remove(filePriorite.Min);
+
+                if (visite.Contains(sommetActuel)) continue;
+                visite.Add(sommetActuel);
+
+                if (sommetsArrivee.Contains(sommetActuel)) break;
+                if (!ListeAdjacence.ContainsKey(sommetActuel)) continue;
+
+                foreach (var kvp in ListeAdjacence[sommetActuel])
+                {
+                    int voisin = kvp.Key;
+                    float poids = kvp.Value; // Temps réel entre les stations
+
+                    double nouvelleDistance = distanceActuelle + poids;
+                    if (nouvelleDistance < distances[voisin])
+                    {
+                        filePriorite.Remove((distances[voisin], voisin));
+                        distances[voisin] = nouvelleDistance;
+                        predecesseurs[voisin] = sommetActuel;
+                        filePriorite.Add((nouvelleDistance, voisin));
+                    }
+                }
+
+                // Gestion du changement de ligne avec prise en compte du temps
+                foreach (var autreSommet in Noeuds.Values.Where(n => n.Libelle == Noeuds[sommetActuel].Libelle).Select(n => n.Sommet))
+                {
+                    if (autreSommet != sommetActuel)
+                    {
+                        double tempsChangement = Noeuds[sommetActuel].TempsChangement; // Récupération du temps de changement
+                        double nouvelleDistance = distanceActuelle + tempsChangement;
+                        if (nouvelleDistance < distances[autreSommet])
+                        {
+                            filePriorite.Remove((distances[autreSommet], autreSommet));
+                            distances[autreSommet] = nouvelleDistance;
+                            predecesseurs[autreSommet] = sommetActuel;
+                            filePriorite.Add((nouvelleDistance, autreSommet));
+                        }
+                    }
+                }
+            }
+
+            var chemin = new List<string>();
+            var etapes = new List<(string, string, double)>();
+            int sommetFinal = sommetsArrivee.OrderBy(s => distances[s]).First();
+            double tempsTotal = distances[sommetFinal]; // Récupération du temps total
+
+            // Construction du chemin en sens inverse et calcul des durées d'étapes
+            var sommets = new List<int>();
+            int sommetCourant = sommetFinal;
+            while (sommetCourant != -1)
+            {
+                sommets.Add(sommetCourant);
+                sommetCourant = predecesseurs[sommetCourant];
+            }
+            sommets.Reverse();
+
+            // Construction de la liste des étapes avec les délais
+            for (int i = 0; i < sommets.Count; i++)
+            {
+                chemin.Add(Noeuds[sommets[i]].Libelle);
+
+                if (i > 0)
+                {
+                    string stationPrecedente = Noeuds[sommets[i - 1]].Libelle;
+                    string stationActuelle = Noeuds[sommets[i]].Libelle;
+                    double tempsEtape;
+
+                    // Vérifier si c'est un changement de ligne (même nom de station)
+                    if (stationPrecedente == stationActuelle)
+                    {
+                        tempsEtape = Noeuds[sommets[i - 1]].TempsChangement;
+                        etapes.Add((stationPrecedente, stationActuelle, tempsEtape));
+                    }
+                    else
+                    {
+                        // Récupérer le poids réel (temps) entre les deux stations
+                        tempsEtape = ListeAdjacence[sommets[i - 1]][sommets[i]];
+                        etapes.Add((stationPrecedente, stationActuelle, tempsEtape));
+                    }
+                }
+            }
+
+            return (chemin, tempsTotal, etapes);
+        }
+
+
+        public (List<string>, double, List<(string, string, double)>) AlgoBellmanFord(string stationDepart, string stationArrivee)
+        {
+            var distances = new Dictionary<int, double>();
+            var predecesseurs = new Dictionary<int, int>();
+            var sommetsDepart = Noeuds.Values.Where(n => n.Libelle == stationDepart).Select(n => n.Sommet).ToList();
+            var sommetsArrivee = Noeuds.Values.Where(n => n.Libelle == stationArrivee).Select(n => n.Sommet).ToList();
+
+            if (!sommetsDepart.Any() || !sommetsArrivee.Any())
+            {
+                Console.WriteLine("Station de départ ou d'arrivée introuvable.");
+                return (new List<string>(), 0, new List<(string, string, double)>());
+            }
+
+            // Initialisation
+            foreach (var noeud in Noeuds.Keys)
+            {
+                distances[noeud] = double.PositiveInfinity;
+                predecesseurs[noeud] = -1;
+            }
+
+            foreach (var sommet in sommetsDepart)
+            {
+                distances[sommet] = 0;
+            }
+
+            // Relaxation des arêtes V-1 fois (V étant le nombre de sommets)
+            int nombreSommets = Noeuds.Count;
+            for (int i = 0; i < nombreSommets - 1; i++)
+            {
+                bool changement = false;
+
+                // Parcourir toutes les arêtes (connections entre stations)
+                foreach (var sommet in ListeAdjacence.Keys)
+                {
+                    if (distances[sommet] == double.PositiveInfinity) continue;
+
+                    // Parcourir les voisins avec leurs poids
+                    foreach (var kvp in ListeAdjacence[sommet])
+                    {
+                        int voisin = kvp.Key;
+                        float poids = kvp.Value; // Temps réel entre les stations
+
+                        double nouvelleDistance = distances[sommet] + poids;
+                        if (nouvelleDistance < distances[voisin])
+                        {
+                            distances[voisin] = nouvelleDistance;
+                            predecesseurs[voisin] = sommet;
+                            changement = true;
+                        }
+                    }
+
+                    // Gestion du changement de ligne
+                    foreach (var autreSommet in Noeuds.Values.Where(n => n.Libelle == Noeuds[sommet].Libelle).Select(n => n.Sommet))
+                    {
+                        if (autreSommet != sommet)
+                        {
+                            double tempsChangement = Noeuds[sommet].TempsChangement;
+                            double nouvelleDistance = distances[sommet] + tempsChangement;
+                            if (nouvelleDistance < distances[autreSommet])
+                            {
+                                distances[autreSommet] = nouvelleDistance;
+                                predecesseurs[autreSommet] = sommet;
+                                changement = true;
+                            }
+                        }
+                    }
+                }
+
+                // Si aucun changement dans cette itération, on peut s'arrêter
+                if (!changement) break;
+            }
+
+            // Vérification des cycles négatifs (optionnel, peut être omis si on sait qu'il n'y en a pas)
+            bool cycleNegatif = false;
+            foreach (var sommet in ListeAdjacence.Keys)
+            {
+                foreach (var kvp in ListeAdjacence[sommet])
+                {
+                    int voisin = kvp.Key;
+                    float poids = kvp.Value;
+
+                    if (distances[sommet] != double.PositiveInfinity &&
+                        distances[sommet] + poids < distances[voisin])
+                    {
+                        cycleNegatif = true;
+                        break;
+                    }
+                }
+                if (cycleNegatif) break;
+            }
+
+            if (cycleNegatif)
+            {
+                Console.WriteLine("Le graphe contient un cycle négatif.");
+                return (new List<string>(), 0, new List<(string, string, double)>());
+            }
+
+            // Trouver le sommet d'arrivée avec la distance minimale
+            int sommetFinal = sommetsArrivee.OrderBy(s => distances[s]).First();
+            double tempsTotal = distances[sommetFinal];
+
+            // Reconstitution du chemin
+            var chemin = new List<string>();
+            var etapes = new List<(string, string, double)>();
+            var sommets = new List<int>();
+
+            int sommetCourant = sommetFinal;
+            while (sommetCourant != -1)
+            {
+                sommets.Add(sommetCourant);
+                sommetCourant = predecesseurs[sommetCourant];
+            }
+            sommets.Reverse();
+
+            // Construction de la liste des étapes avec les délais
+            for (int i = 0; i < sommets.Count; i++)
+            {
+                chemin.Add(Noeuds[sommets[i]].Libelle);
+
+                if (i > 0)
+                {
+                    string stationPrecedente = Noeuds[sommets[i - 1]].Libelle;
+                    string stationActuelle = Noeuds[sommets[i]].Libelle;
+                    double tempsEtape;
+
+                    // Vérifier si c'est un changement de ligne (même nom de station)
+                    if (stationPrecedente == stationActuelle)
+                    {
+                        tempsEtape = Noeuds[sommets[i - 1]].TempsChangement;
+                        etapes.Add((stationPrecedente, stationActuelle, tempsEtape));
+                    }
+                    else
+                    {
+                        // Récupérer le poids réel (temps) entre les deux stations
+                        tempsEtape = ListeAdjacence[sommets[i - 1]][sommets[i]];
+                        etapes.Add((stationPrecedente, stationActuelle, tempsEtape));
+                    }
+                }
+            }
+
+            return (chemin, tempsTotal, etapes);
+        }
+
 
         ///Fonction VisualiserGraphe qui permet de créer le graphe grâce à SkiaSharp
         public void VisualiserGraphe(string filePath)
@@ -300,6 +568,7 @@ namespace PSI_Rendu1
             using (SKPaint paintLien = new SKPaint { Style = SKPaintStyle.Stroke, StrokeWidth = 3 })
             using (SKPaint paintTexte = new SKPaint { Color = SKColors.Black, TextSize = 12 })
             using (SKPaint paintFond = new SKPaint { Color = SKColors.White.WithAlpha(200), Style = SKPaintStyle.Fill })
+            using (SKPaint paintPoids = new SKPaint { Color = SKColors.DarkGray, TextSize = 10 })
             {
                 // Effacer le canvas avec un fond blanc
                 canvas.Clear(SKColors.White);
@@ -323,7 +592,9 @@ namespace PSI_Rendu1
                 Dictionary<int, SKPoint> positions = new Dictionary<int, SKPoint>();
                 foreach (var noeud in Noeuds.Values)
                 {
+                    // Conversion des coordonnées géographiques en pixels
                     float x = (float)((noeud.Longitude - minLon) / (maxLon - minLon) * largeur);
+                    // Inversion de l'axe Y pour placer le nord en haut
                     float y = (float)((1 - (noeud.Latitude - minLat) / (maxLat - minLat)) * hauteur);
                     positions[noeud.Sommet] = new SKPoint(x, y);
                 }
@@ -331,12 +602,42 @@ namespace PSI_Rendu1
                 // Dessiner d'abord les liens (pour qu'ils soient sous les nœuds)
                 foreach (var lien in Liens)
                 {
-                    // Utiliser l'ID de ligne pour déterminer la couleur
-                    paintLien.Color = ObtenirCouleurLigne(lien.Noeud1.IdLigne);
-
                     SKPoint point1 = positions[lien.Noeud1.Sommet];
                     SKPoint point2 = positions[lien.Noeud2.Sommet];
+
+                    // Utiliser la couleur correspondant à la ligne du premier nœud
+                    // (on suppose que les nœuds connectés sont généralement sur la même ligne)
+                    string idLigne = lien.Noeud1.IdLigne;
+
+                    if (CouleursLignes.ContainsKey(idLigne))
+                    {
+                        paintLien.Color = CouleursLignes[idLigne];
+                    }
+                    else
+                    {
+                        paintLien.Color = SKColors.Gray; // Couleur par défaut
+                    }
+
                     canvas.DrawLine(point1, point2, paintLien);
+
+                    // Afficher la pondération au milieu de l'arc
+                    if (lien.Poids > 0)
+                    {
+                        float midX = (point1.X + point2.X) / 2;
+                        float midY = (point1.Y + point2.Y) / 2;
+                        string poidsText = lien.Poids.ToString();
+
+                        // Cercle blanc derrière le texte pour plus de lisibilité
+                        using (SKPaint circlePaint = new SKPaint { Color = SKColors.White, Style = SKPaintStyle.Fill })
+                        {
+                            canvas.DrawCircle(midX, midY, 8, circlePaint);
+                        }
+
+                        // Mesurer les dimensions du texte pour le centrer
+                        SKRect textBounds = new SKRect();
+                        paintPoids.MeasureText(poidsText, ref textBounds);
+                        canvas.DrawText(poidsText, midX - textBounds.Width / 2, midY + textBounds.Height / 2, paintPoids);
+                    }
                 }
 
                 // Dessiner les nœuds et leurs libellés
@@ -344,22 +645,19 @@ namespace PSI_Rendu1
                 {
                     SKPoint position = positions[noeud.Sommet];
 
-                    // Utiliser l'ID de ligne pour déterminer la couleur
-                    paintNoeud.Color = ObtenirCouleurLigne(noeud.IdLigne);
+                    // Choisir la couleur du nœud en fonction de l'ID de ligne
+                    string idLigne = noeud.IdLigne;
+                    if (CouleursLignes.ContainsKey(idLigne))
+                    {
+                        paintNoeud.Color = CouleursLignes[idLigne];
+                    }
+                    else
+                    {
+                        paintNoeud.Color = SKColors.Black; // Couleur par défaut
+                    }
 
                     // Dessiner le cercle représentant la station
-                    canvas.DrawCircle(position, 5, paintNoeud);
-
-                    // Dessiner un contour noir pour mieux distinguer les stations
-                    using (SKPaint paintContour = new SKPaint
-                    {
-                        Color = SKColors.Black,
-                        Style = SKPaintStyle.Stroke,
-                        StrokeWidth = 1
-                    })
-                    {
-                        canvas.DrawCircle(position, 5, paintContour);
-                    }
+                    canvas.DrawCircle(position, 3, paintNoeud);
 
                     // Mesurer les dimensions du texte pour le fond
                     string libelle = noeud.Libelle;
@@ -371,18 +669,20 @@ namespace PSI_Rendu1
                     float textY = position.Y + 5;
 
                     // Dessiner un fond semi-transparent pour le texte
-                    SKRect fondRect = new SKRect(
+                    /*SKRect fondRect = new SKRect(
                         textX - 2,
                         textY - textBounds.Height - 2,
                         textX + textBounds.Width + 2,
                         textY + 2
                     );
-                    canvas.DrawRect(fondRect, paintFond);
+                    canvas.DrawRect(fondRect, paintFond);*/
 
                     // Dessiner le libellé de la station
-                    canvas.DrawText(libelle, textX, textY, paintTexte);
-                }
+                    //canvas.DrawText(libelle, textX, textY, paintTexte);
 
+                    // Option: Afficher l'ID de ligne à côté du nom de la station
+                    // canvas.DrawText("L" + idLigne, textX, textY + textBounds.Height + 5, paintPoids);
+                }
 
                 // Sauvegarder l'image
                 using (SKFileWStream fs = new SKFileWStream(filePath))
