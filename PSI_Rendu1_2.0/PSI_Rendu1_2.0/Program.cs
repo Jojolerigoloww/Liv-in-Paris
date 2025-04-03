@@ -6,11 +6,54 @@ using System.Text;
 using System.Threading.Tasks;
 using SkiaSharp;
 using OfficeOpenXml;
+using MySql.Data.MySqlClient;
 
 namespace PSI_Rendu1
 {
     internal class Program
     {
+
+        static void ConnexionSQL()
+        {
+            /// CONNECTER LA DATABASE
+            MySqlConnection maConnexion = null;
+            try
+            {
+                string connexionString = "SERVER=localhost;PORT=3306;DATABASE=livin;UID=root;PASSWORD=xhz45ZXQ-&";
+                maConnexion = new MySqlConnection(connexionString);
+                maConnexion.Open();
+            }
+            catch (MySqlException e)
+            {
+                Console.WriteLine("Erreur Connexion : " + e.ToString());
+                return;
+            }
+
+            /// CREER UNE REQUETE
+            string requete = "SELECT * FROM utilisateur ORDER BY Nom_User,Prenom_User; ";
+            MySqlCommand command1 = maConnexion.CreateCommand();
+            command1.CommandText = requete;
+            MySqlDataReader reader1 = command1.ExecuteReader();
+
+            /// RECUPERER LA OU LES RESULTATS
+            string[] valueString = new string[reader1.FieldCount];
+            while (reader1.Read())
+            {
+                string Nom_User = (string)reader1["Nom_User"];
+                string Prenom_User = (string)reader1["Prenom_User"];
+                Console.WriteLine(Nom_User + " " + Prenom_User);
+
+
+            }
+            /// FERMER LA CONNEXION
+            reader1.Close();
+            command1.Dispose();
+
+
+        }
+        
+        
+        
         static void Main(string[] args)
         {
             string noeudsFilePath = "MetroParisNoeuds.csv";
@@ -34,6 +77,8 @@ namespace PSI_Rendu1
 
             graphe.VisualiserGraphe("graphe.png");
             Console.WriteLine("Le graphe a été généré sous 'graphe.png'.");
+
+
 
             Console.ReadLine();
  
