@@ -13,14 +13,16 @@ namespace PSI_Rendu1
         public double Longitude { get; private set; }
         public double Latitude { get; private set; }
         public string IdLigne { get; private set; }
+        public double TempsChangement { get; private set; }
 
-        public Noeud(int sommet, string libelle, double longitude, double latitude, string idLigne = null)
+        public Noeud(int sommet, string libelle, double longitude, double latitude, string idLigne = null, double tempsChangement = 0)
         {
             Sommet = sommet;
             Libelle = libelle;
             Longitude = longitude;
             Latitude = latitude;
             IdLigne = idLigne;
+            TempsChangement = tempsChangement;
         }
 
         public string Decrire()

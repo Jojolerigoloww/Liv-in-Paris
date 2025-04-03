@@ -10,11 +10,13 @@ namespace PSI_Rendu1
     {
         public Noeud Noeud1 { get; private set; }
         public Noeud Noeud2 { get; private set; }
+        public float Poids { get; set; }
 
-        public Lien(Noeud noeud1, Noeud noeud2)
+        public Lien(Noeud noeud1, Noeud noeud2, float poids)
         {
             Noeud1 = noeud1;
             Noeud2 = noeud2;
+            Poids = poids;
         }
 
         public string Decrire()
