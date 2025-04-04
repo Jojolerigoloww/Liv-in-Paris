@@ -113,16 +113,16 @@ namespace PSI_Rendu1
                 while (!reader.EndOfStream)
                 {
                     string line = reader.ReadLine();
-                    string[] tokens = line.Split(';');
-                    if (tokens.Length >= 8)
+                    string[] Valeurs = line.Split(';');
+                    if (Valeurs.Length >= 8)
                     {
-                        int sommet = int.Parse(tokens[0].Trim());
-                        string libelle = tokens[2].Trim();
-                        double longitude = double.Parse(tokens[3].Trim().Replace("\uFEFF", ""), CultureInfo.InvariantCulture);
-                        double latitude = double.Parse(tokens[4].Trim().Replace("\uFEFF", ""), CultureInfo.InvariantCulture);
-                        string idLigne = tokens[1].Trim();
+                        int sommet = int.Parse(Valeurs[0].Trim());
+                        string libelle = Valeurs[2].Trim();
+                        double longitude = double.Parse(Valeurs[3].Trim().Replace("\uFEFF", ""), CultureInfo.InvariantCulture);
+                        double latitude = double.Parse(Valeurs[4].Trim().Replace("\uFEFF", ""), CultureInfo.InvariantCulture);
+                        string idLigne = Valeurs[1].Trim();
                         double tempsChangement = 0; // Valeur par défaut
-                        if (tokens.Length > 7 && double.TryParse(tokens[8].Trim(), out double temp))
+                        if (Valeurs.Length > 7 && double.TryParse(Valeurs[8].Trim(), out double temp))
                         {
                             tempsChangement = temp;
                         }
@@ -150,26 +150,26 @@ namespace PSI_Rendu1
                         continue;
                     }
 
-                    string[] tokens = line.Split(';');
-                    if (tokens.Length >= 4)
+                    string[] Valeurs = line.Split(';');
+                    if (Valeurs.Length >= 4)
                     {
-                        if (tokens[2] == null || tokens[2].Length == 0)
+                        if (Valeurs[2] == null || Valeurs[2].Length == 0)
                         {
                             continue;
                         }
-                        else if (tokens[3] == null || tokens[3].Length == 0)
+                        else if (Valeurs[3] == null || Valeurs[3].Length == 0)
                         {
-                            int sommet1 = int.Parse(tokens[0].Trim());
-                            int sommet2 = int.Parse(tokens[2].Trim());
-                            float poids = float.Parse(tokens[4].Trim());
+                            int sommet1 = int.Parse(Valeurs[0].Trim());
+                            int sommet2 = int.Parse(Valeurs[2].Trim());
+                            float poids = float.Parse(Valeurs[4].Trim());
                             AjouterLien(sommet1, sommet2, poids);
                         }
-                        else if (tokens[2] != null && tokens[3] != null && tokens[0] != null)
+                        else if (Valeurs[2] != null && Valeurs[3] != null && Valeurs[0] != null)
                         {
-                            int sommet1 = int.Parse(tokens[0].Trim());
-                            int sommet2 = int.Parse(tokens[2].Trim());
-                            int sommet3 = int.Parse(tokens[3].Trim());
-                            float poids = float.Parse(tokens[4].Trim());
+                            int sommet1 = int.Parse(Valeurs[0].Trim());
+                            int sommet2 = int.Parse(Valeurs[2].Trim());
+                            int sommet3 = int.Parse(Valeurs[3].Trim());
+                            float poids = float.Parse(Valeurs[4].Trim());
                             AjouterLien(sommet1, sommet2, poids);
                             AjouterLien(sommet1, sommet3, poids);
                         }  
@@ -429,7 +429,6 @@ namespace PSI_Rendu1
             var sommets = Noeuds.Keys.ToList();
             int n = sommets.Count;
 
-            // Initialisation
             foreach (var i in sommets)
             {
                 foreach (var j in sommets)
@@ -492,7 +491,7 @@ namespace PSI_Rendu1
                             distances[(i, j)] = distances[(i, k)] + distances[(k, j)];
 
                             var nouveauChemin = new List<int>();
-                            nouveauChemin.AddRange(chemins[(i, k)].Take(chemins[(i, k)].Count - 1)); // Sans le dernier élément
+                            nouveauChemin.AddRange(chemins[(i, k)].Take(chemins[(i, k)].Count - 1));
                             nouveauChemin.AddRange(chemins[(k, j)]);
                             chemins[(i, j)] = nouveauChemin;
                         }
@@ -547,7 +546,6 @@ namespace PSI_Rendu1
                 return (new List<string>(), 0, new List<(string, string, double)>());
             }
 
-            // Construire la liste des stations et des étapes
             var stations = new List<string>();
             var etapes = new List<(string, string, double)>();
 
@@ -710,7 +708,7 @@ namespace PSI_Rendu1
                     float textX = position.X + 7;
                     float textY = position.Y + 5;
 
-                    /// Dessiner le texte
+                    /// Dessiner le texte (en commentaire car peu lisible avec les libellés)
                     /*SKRect fondRect = new SKRect(
                         textX - 2,
                         textY - textBounds.Height - 2,
@@ -834,22 +832,19 @@ namespace PSI_Rendu1
                     }
                 }
 
-                // Afficher le temps total en haut de l'image
+                /// Légende
                 canvas.DrawText($"Temps total : {tempsTotal:F1} minutes", largeurImage / 2, 40, styleTexteTotal);
 
-                // Ajouter une légende
                 float posXLegende = 30;
                 float posYLegende = hauteurImage - 50;
 
-                // Légende pour les stations normales
                 canvas.DrawCircle(posXLegende, posYLegende, 10, styleNoeud);
                 canvas.DrawText("Station", posXLegende + 50, posYLegende + 5, styleTexteStation);
 
-                // Légende pour les changements de ligne
                 canvas.DrawCircle(posXLegende + 150, posYLegende, 12, styleChangementLigne);
                 canvas.DrawText("Changement de ligne", posXLegende + 250, posYLegende + 5, styleTexteStation);
 
-                // Sauvegarder l'image
+                /// Sauvegarder l'image
                 using (var image = surface.Snapshot())
                 using (var data = image.Encode(SKEncodedImageFormat.Png, 100))
                 using (var stream = File.OpenWrite(cheminFichier))
@@ -860,7 +855,6 @@ namespace PSI_Rendu1
                 Console.WriteLine($"Visualisation du chemin sauvegardée sous : {cheminFichier}");
             }
         }
-
     }
 }
 

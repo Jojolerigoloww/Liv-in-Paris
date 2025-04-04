@@ -54,6 +54,7 @@ namespace PSI_Rendu1
 
         static void Main(string[] args)
         {
+            /// Création des arcs et des noeuds depuis les csv
             string noeudsFilePath = "MetroParisNoeuds.csv";
             string arcsFilePath = "MetroParisArcs.csv";
 
@@ -64,15 +65,10 @@ namespace PSI_Rendu1
             }
 
             Graphe graphe = new Graphe();
-            //graphe.DecrireNoeuds();
-            //graphe.DecrireLiens();
-
             graphe.ChargerNoeudsDepuisCSV(noeudsFilePath);
             graphe.ChargerArcsDepuisCSV(arcsFilePath);
 
-            //Console.WriteLine("Analyse du graphe :");
-            //graphe.AnalyserGraphe();
-
+            /// Génération du graphe.png
             graphe.VisualiserGraphe("graphe.png");
             Console.WriteLine("Le graphe a été généré sous 'graphe.png'.");
 
@@ -104,6 +100,7 @@ namespace PSI_Rendu1
             Console.WriteLine($"Temps total du parcours : {tempsParcours} minutes");
             Console.WriteLine("Chemin le plus court : " + string.Join(" -> ", itineraire));
 
+            /// Fonctions additionnelles relatives au plus court chemin
             graphe.ComparerAlgorithmes(station1, station2);
             graphe.VisualiserChemin(station1, station2, "chemin.png");
 

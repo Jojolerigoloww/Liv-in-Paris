@@ -28,6 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            /// Affichage de l'ensemble des utilisateurs
+            /*this.dataGridViewUtilisateurs = new System.Windows.Forms.DataGridView();
+            this.SuspendLayout();
+            this.dataGridViewUtilisateurs.Location = new System.Drawing.Point(12, 12);
+            this.dataGridViewUtilisateurs.Size = new System.Drawing.Size(500, 300);
+            this.Controls.Add(this.dataGridViewUtilisateurs);*/
+
+            this.ResumeLayout(false);
+
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CréationCompte));
             lbl_titre = new Label();
             lbl_nom = new Label();
