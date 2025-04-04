@@ -8,13 +8,26 @@ namespace PSI_Rendu1
 {
     internal class Noeud
     {
-        ///Création de l'attribut de type int 
         public int Sommet { get; private set; }
+        public string Libelle { get; private set; }
+        public double Longitude { get; private set; }
+        public double Latitude { get; private set; }
+        public string IdLigne { get; private set; }
+        public double TempsChangement { get; private set; }
 
-        ///Constructeur de la classe Lien
-        public Noeud(int sommet)
+        public Noeud(int sommet, string libelle, double longitude, double latitude, string idLigne = null, double tempsChangement = 0)
         {
             Sommet = sommet;
+            Libelle = libelle;
+            Longitude = longitude;
+            Latitude = latitude;
+            IdLigne = idLigne;
+            TempsChangement = tempsChangement;
+        }
+
+        public string Decrire()
+        {
+            return $"Noeud: {Sommet}, Libellé: {Libelle}, Longitude: {Longitude}, Latitude: {Latitude}";
         }
     }
 }

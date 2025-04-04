@@ -1,4 +1,4 @@
--- CREATE DATABASE livin;
+CREATE DATABASE livin;
 USE livin;
 
 

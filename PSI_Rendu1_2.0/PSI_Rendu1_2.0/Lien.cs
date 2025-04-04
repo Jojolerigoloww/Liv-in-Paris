@@ -8,16 +8,20 @@ namespace PSI_Rendu1
 {
     internal class Lien
     {
-
-        ///Création des deux attrributs de type Noeud
         public Noeud Noeud1 { get; private set; }
         public Noeud Noeud2 { get; private set; }
+        public float Poids { get; set; }
 
-        ///Constructeur de la classe Lien
-        public Lien(Noeud n1, Noeud n2)
+        public Lien(Noeud noeud1, Noeud noeud2, float poids)
         {
-            Noeud1 = n1;
-            Noeud2 = n2;
+            Noeud1 = noeud1;
+            Noeud2 = noeud2;
+            Poids = poids;
+        }
+
+        public string Decrire()
+        {
+            return $"Lien entre {Noeud1.Sommet} ({Noeud1.Libelle}) et {Noeud2.Sommet} ({Noeud2.Libelle})";
         }
     }
 }
