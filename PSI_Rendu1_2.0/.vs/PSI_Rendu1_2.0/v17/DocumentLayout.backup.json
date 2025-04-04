@@ -3,15 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Rendu1_2.0\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{0115B082-69D9-43B1-B22C-CACDBCA78579}|PSI_Rendu1_2.0\\PSI_Rendu1_2.0.csproj|c:\\users\\basti\\documents\\github\\liv-in-paris\\psi_rendu1_2.0\\psi_rendu1_2.0\\graphe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0115B082-69D9-43B1-B22C-CACDBCA78579}|PSI_Rendu1_2.0\\PSI_Rendu1_2.0.csproj|solutionrelative:psi_rendu1_2.0\\graphe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0115B082-69D9-43B1-B22C-CACDBCA78579}|PSI_Rendu1_2.0\\PSI_Rendu1_2.0.csproj|c:\\users\\basti\\documents\\github\\liv-in-paris\\psi_rendu1_2.0\\psi_rendu1_2.0\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0115B082-69D9-43B1-B22C-CACDBCA78579}|PSI_Rendu1_2.0\\PSI_Rendu1_2.0.csproj|solutionrelative:psi_rendu1_2.0\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\dotnet\\sdk\\9.0.200\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{92C1DD47-1A1B-4EF9-838D-47B4DB9E1A3C}|Test-PSI\\Test-PSI.csproj|c:\\users\\basti\\documents\\github\\liv-in-paris\\psi_rendu1_2.0\\test-psi\\mstestsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{92C1DD47-1A1B-4EF9-838D-47B4DB9E1A3C}|Test-PSI\\Test-PSI.csproj|solutionrelative:test-psi\\mstestsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0115B082-69D9-43B1-B22C-CACDBCA78579}|PSI_Rendu1_2.0\\PSI_Rendu1_2.0.csproj|c:\\users\\basti\\documents\\github\\liv-in-paris\\psi_rendu1_2.0\\psi_rendu1_2.0\\lien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -22,8 +19,8 @@
       "RelativeMoniker": "D:0:0:{0115B082-69D9-43B1-B22C-CACDBCA78579}|PSI_Rendu1_2.0\\PSI_Rendu1_2.0.csproj|solutionrelative:psi_rendu1_2.0\\noeud.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0115B082-69D9-43B1-B22C-CACDBCA78579}|PSI_Rendu1_2.0\\PSI_Rendu1_2.0.csproj|c:\\users\\basti\\documents\\github\\liv-in-paris\\psi_rendu1_2.0\\psi_rendu1_2.0\\graphe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0115B082-69D9-43B1-B22C-CACDBCA78579}|PSI_Rendu1_2.0\\PSI_Rendu1_2.0.csproj|solutionrelative:psi_rendu1_2.0\\graphe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{92C1DD47-1A1B-4EF9-838D-47B4DB9E1A3C}|Test-PSI\\Test-PSI.csproj|c:\\users\\basti\\documents\\github\\liv-in-paris\\psi_rendu1_2.0\\test-psi\\mstestsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92C1DD47-1A1B-4EF9-838D-47B4DB9E1A3C}|Test-PSI\\Test-PSI.csproj|solutionrelative:test-psi\\mstestsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -33,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -41,20 +38,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Microsoft.PackageDependencyResolution.targets",
-              "DocumentMoniker": "C:\\Program Files\\dotnet\\sdk\\9.0.200\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\Program Files\\dotnet\\sdk\\9.0.200\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets",
-              "ToolTip": "C:\\Program Files\\dotnet\\sdk\\9.0.200\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\Program Files\\dotnet\\sdk\\9.0.200\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets",
-              "ViewState": "AgIAAO4AAAAAAAAAAAAEwAkBAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
-              "WhenOpened": "2025-04-04T02:06:20.05Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "MSTestSettings.cs",
               "DocumentMoniker": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Rendu1_2.0\\Test-PSI\\MSTestSettings.cs",
               "RelativeDocumentMoniker": "Test-PSI\\MSTestSettings.cs",
@@ -67,7 +51,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Lien.cs",
               "DocumentMoniker": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Rendu1_2.0\\PSI_Rendu1_2.0\\Lien.cs",
               "RelativeDocumentMoniker": "PSI_Rendu1_2.0\\Lien.cs",
@@ -80,39 +64,39 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "Noeud.cs",
               "DocumentMoniker": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Rendu1_2.0\\PSI_Rendu1_2.0\\Noeud.cs",
               "RelativeDocumentMoniker": "PSI_Rendu1_2.0\\Noeud.cs",
               "ToolTip": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Rendu1_2.0\\PSI_Rendu1_2.0\\Noeud.cs",
               "RelativeToolTip": "PSI_Rendu1_2.0\\Noeud.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAA7AAAAAAAAAA==",
+              "ViewState": "AgIAAAoAAAAAAAAAAAA1wA8AAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-02T11:19:48.699Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
               "Title": "Graphe.cs",
               "DocumentMoniker": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Rendu1_2.0\\PSI_Rendu1_2.0\\Graphe.cs",
               "RelativeDocumentMoniker": "PSI_Rendu1_2.0\\Graphe.cs",
               "ToolTip": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Rendu1_2.0\\PSI_Rendu1_2.0\\Graphe.cs",
               "RelativeToolTip": "PSI_Rendu1_2.0\\Graphe.cs",
-              "ViewState": "AgIAAMsCAAAAAAAAAAAiwBwDAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAANsCAAAAAAAAAAAuwOwCAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-02T11:19:40.275Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Rendu1_2.0\\PSI_Rendu1_2.0\\Program.cs",
               "RelativeDocumentMoniker": "PSI_Rendu1_2.0\\Program.cs",
               "ToolTip": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Rendu1_2.0\\PSI_Rendu1_2.0\\Program.cs",
               "RelativeToolTip": "PSI_Rendu1_2.0\\Program.cs",
-              "ViewState": "AgIAAE0AAAAAAAAAAAAkwFwAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAFkAAAAAAAAAAAAuwGoAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-28T12:08:53.995Z",
               "EditorCaption": ""
