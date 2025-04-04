@@ -12,14 +12,18 @@ namespace PSI_Interface
 {
     public partial class AppPrincipale : Form
     {
-        public AppPrincipale()
+        private string nom;
+        private string prenom;
+        public AppPrincipale(string nom, string prenom)
         {
             InitializeComponent();
+            this.prenom = prenom;
+            this.nom = nom;
         }
 
         private void AppPrincipale_Load(object sender, EventArgs e)
         {
-
+            lbl_titre.Text = $"Bienvenue, {prenom} {nom} !";
         }
 
         private void label1_Click(object sender, EventArgs e)
