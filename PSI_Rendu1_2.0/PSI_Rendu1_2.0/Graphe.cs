@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SkiaSharp;
-using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Security.Cryptography;
@@ -691,6 +690,150 @@ namespace PSI_Rendu1
                 }
             }
         }
+
+        public void VisualiserChemin(string stationDepart, string stationArrivee, string cheminFichier)
+        {
+            // Récupérer le chemin optimal et ses informations
+            var (itineraire, tempsTotal, etapes) = AlgoDjikstra(stationDepart, stationArrivee);
+            // On peut aussi utiliser AlgoBellmanFord à la place de AlgoDjikstra
+
+            if (itineraire.Count == 0)
+            {
+                Console.WriteLine("Aucun chemin trouvé entre ces stations.");
+                return;
+            }
+
+            // Paramètres de l'image
+            int largeurImage = 1200;
+            int hauteurImage = 300;
+            int margeHorizontale = 100;
+            int margeVerticale = 100;
+
+            // Calcul de l'espace disponible pour le tracé
+            int largeurDisponible = largeurImage - (2 * margeHorizontale);
+            int hauteurDisponible = hauteurImage - (2 * margeVerticale);
+
+            // Calcul de l'espacement entre les nœuds
+            float espacementHorizontal = largeurDisponible / (float)(itineraire.Count - 1);
+
+            // Création de la surface de dessin
+            using (var surface = SKSurface.Create(new SKImageInfo(largeurImage, hauteurImage)))
+            {
+                var canvas = surface.Canvas;
+                canvas.Clear(SKColors.White);
+
+                // Définition des styles
+                var styleLigne = new SKPaint
+                {
+                    Color = SKColors.DarkGray,
+                    StrokeWidth = 3,
+                    IsAntialias = true,
+                    Style = SKPaintStyle.Stroke
+                };
+
+                var styleNoeud = new SKPaint
+                {
+                    Color = SKColors.DodgerBlue,
+                    IsAntialias = true,
+                    Style = SKPaintStyle.Fill
+                };
+
+                var styleChangementLigne = new SKPaint
+                {
+                    Color = SKColors.Orange,
+                    IsAntialias = true,
+                    Style = SKPaintStyle.Fill
+                };
+
+                var styleTexteStation = new SKPaint
+                {
+                    Color = SKColors.Black,
+                    TextSize = 16,
+                    IsAntialias = true,
+                    TextAlign = SKTextAlign.Center
+                };
+
+                var styleTextePoids = new SKPaint
+                {
+                    Color = SKColors.Red,
+                    TextSize = 14,
+                    IsAntialias = true,
+                    TextAlign = SKTextAlign.Center
+                };
+
+                var styleTexteTotal = new SKPaint
+                {
+                    Color = SKColors.DarkBlue,
+                    TextSize = 18,
+                    IsAntialias = true,
+                    TextAlign = SKTextAlign.Center,
+                    FakeBoldText = true
+                };
+
+                // Position de départ
+                float posY = hauteurImage / 2;
+
+                // Tracer le chemin et les nœuds
+                for (int i = 0; i < itineraire.Count; i++)
+                {
+                    float posX = margeHorizontale + (i * espacementHorizontal);
+
+                    // Tracer la ligne entre les nœuds
+                    if (i > 0)
+                    {
+                        float posXPrecedent = margeHorizontale + ((i - 1) * espacementHorizontal);
+                        canvas.DrawLine(posXPrecedent, posY, posX, posY, styleLigne);
+
+                        // Afficher le poids (temps) au-dessus de la ligne
+                        float posXMilieu = (posXPrecedent + posX) / 2;
+                        double temps = etapes[i - 1].Item3; // Temps pour cette étape
+                        canvas.DrawText($"{temps:F1} min", posXMilieu, posY - 15, styleTextePoids);
+                    }
+
+                    // Déterminer si c'est un changement de ligne
+                    bool estChangementLigne = (i > 0 && itineraire[i] == itineraire[i - 1]);
+
+                    // Tracer le nœud
+                    float rayonNoeud = estChangementLigne ? 12 : 10;
+                    canvas.DrawCircle(posX, posY, rayonNoeud, estChangementLigne ? styleChangementLigne : styleNoeud);
+
+                    // Afficher le nom de la station
+                    canvas.DrawText(itineraire[i], posX, posY + 30, styleTexteStation);
+
+                    // Pour les nœuds de changement de ligne, ajouter une indication
+                    if (estChangementLigne)
+                    {
+                        canvas.DrawText("(Changement)", posX, posY + 50, styleTexteStation);
+                    }
+                }
+
+                // Afficher le temps total en haut de l'image
+                canvas.DrawText($"Temps total : {tempsTotal:F1} minutes", largeurImage / 2, 40, styleTexteTotal);
+
+                // Ajouter une légende
+                float posXLegende = 30;
+                float posYLegende = hauteurImage - 50;
+
+                // Légende pour les stations normales
+                canvas.DrawCircle(posXLegende, posYLegende, 10, styleNoeud);
+                canvas.DrawText("Station", posXLegende + 50, posYLegende + 5, styleTexteStation);
+
+                // Légende pour les changements de ligne
+                canvas.DrawCircle(posXLegende + 150, posYLegende, 12, styleChangementLigne);
+                canvas.DrawText("Changement de ligne", posXLegende + 250, posYLegende + 5, styleTexteStation);
+
+                // Sauvegarder l'image
+                using (var image = surface.Snapshot())
+                using (var data = image.Encode(SKEncodedImageFormat.Png, 100))
+                using (var stream = File.OpenWrite(cheminFichier))
+                {
+                    data.SaveTo(stream);
+                }
+
+                Console.WriteLine($"Visualisation du chemin sauvegardée sous : {cheminFichier}");
+            }
+        }
+
     }
 }
 

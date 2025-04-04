@@ -11,7 +11,7 @@ namespace PSI_Interface
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new InterfaceLogin());
+            Application.Run(new Accueil());
         }
     }
 }
