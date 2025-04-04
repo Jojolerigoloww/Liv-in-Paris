@@ -46,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -54,12 +54,25 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Cr\u00E9ationCompte.cs",
+              "DocumentMoniker": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Interface\\Cr\u00E9ationCompte.cs",
+              "RelativeDocumentMoniker": "Cr\u00E9ationCompte.cs",
+              "ToolTip": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Interface\\Cr\u00E9ationCompte.cs",
+              "RelativeToolTip": "Cr\u00E9ationCompte.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAA8wCYAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-04T01:24:28.506Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Cr\u00E9ationCompte.cs [Conception]",
               "DocumentMoniker": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Interface\\Cr\u00E9ationCompte.cs",
               "RelativeDocumentMoniker": "Cr\u00E9ationCompte.cs",
-              "ToolTip": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Interface\\Cr\u00E9ationCompte.cs [Conception]*",
-              "RelativeToolTip": "Cr\u00E9ationCompte.cs [Conception]*",
+              "ToolTip": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Interface\\Cr\u00E9ationCompte.cs [Conception]",
+              "RelativeToolTip": "Cr\u00E9ationCompte.cs [Conception]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-04T01:30:05.105Z",
               "EditorCaption": " [Conception]"
@@ -75,19 +88,6 @@
               "ViewState": "AgIAAMEAAAAAAAAAAAAAAF8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-04T01:29:45.673Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Cr\u00E9ationCompte.cs",
-              "DocumentMoniker": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Interface\\Cr\u00E9ationCompte.cs",
-              "RelativeDocumentMoniker": "Cr\u00E9ationCompte.cs",
-              "ToolTip": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Interface\\Cr\u00E9ationCompte.cs*",
-              "RelativeToolTip": "Cr\u00E9ationCompte.cs*",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAkwCYAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-04T01:24:28.506Z",
               "EditorCaption": ""
             },
             {

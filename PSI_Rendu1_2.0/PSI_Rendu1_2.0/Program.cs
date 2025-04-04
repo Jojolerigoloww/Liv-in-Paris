@@ -104,6 +104,7 @@ namespace PSI_Rendu1
             Console.WriteLine($"Temps total du parcours : {tempsParcours} minutes");
             Console.WriteLine("Chemin le plus court : " + string.Join(" -> ", itineraire));
 
+            graphe.ComparerAlgorithmes(station1, station2);
             graphe.VisualiserChemin(station1, station2, "chemin.png");
 
             Console.ReadLine();

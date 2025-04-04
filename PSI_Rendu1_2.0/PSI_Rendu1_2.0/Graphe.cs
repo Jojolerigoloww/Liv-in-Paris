@@ -9,6 +9,7 @@ using System.IO;
 using System.Security.Cryptography;
 using System.IO.Compression;
 using System.Globalization;
+using System.Diagnostics;
 
 
 [assembly: System.Runtime.CompilerServices.InternalsVisibleTo("Test-PSI")]
@@ -238,7 +239,7 @@ namespace PSI_Rendu1
                         double latitude = double.Parse(tokens[4].Trim().Replace("\uFEFF", ""), CultureInfo.InvariantCulture);
                         string idLigne = tokens[1].Trim();
                         double tempsChangement = 0; // Valeur par défaut
-                        if (tokens.Length > 8 && double.TryParse(tokens[8].Trim(), out double temp))
+                        if (tokens.Length > 7 && double.TryParse(tokens[8].Trim(), out double temp))
                         {
                             tempsChangement = temp;
                         }
@@ -270,9 +271,7 @@ namespace PSI_Rendu1
                     {
                         if (tokens[2] == null || tokens[2].Length == 0)
                         {
-                            int sommet1 = int.Parse(tokens[0].Trim());
-                            int sommet3 = int.Parse(tokens[3].Trim());
-                            //AjouterLien(sommet1, sommet3);
+                            continue;
                         }
                         else if (tokens[3] == null || tokens[3].Length == 0)
                         {
@@ -553,6 +552,199 @@ namespace PSI_Rendu1
             }
 
             return (chemin, tempsTotal, etapes);
+        }
+
+        public Dictionary<(int, int), (double, List<int>)> AlgoFloydWarshall()
+        {
+            var distances = new Dictionary<(int, int), double>();
+            var chemins = new Dictionary<(int, int), List<int>>();
+            var sommets = Noeuds.Keys.ToList();
+            int n = sommets.Count;
+
+            // Initialisation
+            foreach (var i in sommets)
+            {
+                foreach (var j in sommets)
+                {
+                    if (i == j)
+                    {
+                        distances[(i, j)] = 0;
+                        chemins[(i, j)] = new List<int> { i };
+                    }
+                    else
+                    {
+                        distances[(i, j)] = double.PositiveInfinity;
+                        chemins[(i, j)] = new List<int>();
+                    }
+                }
+            }
+
+            // Initialisation avec les arêtes directes
+            foreach (var sommet in sommets)
+            {
+                if (ListeAdjacence.ContainsKey(sommet))
+                {
+                    foreach (var kvp in ListeAdjacence[sommet])
+                    {
+                        int voisin = kvp.Key;
+                        float poids = kvp.Value;
+
+                        distances[(sommet, voisin)] = poids;
+                        chemins[(sommet, voisin)] = new List<int> { sommet, voisin };
+                    }
+                }
+            }
+
+            // Initialisation des changements de ligne
+            foreach (var sommet1 in sommets)
+            {
+                foreach (var sommet2 in sommets)
+                {
+                    if (sommet1 != sommet2 &&
+                        Noeuds.ContainsKey(sommet1) &&
+                        Noeuds.ContainsKey(sommet2) &&
+                        Noeuds[sommet1].Libelle == Noeuds[sommet2].Libelle)
+                    {
+                        double tempsChangement = Noeuds[sommet1].TempsChangement;
+                        if (tempsChangement < distances[(sommet1, sommet2)])
+                        {
+                            distances[(sommet1, sommet2)] = tempsChangement;
+                            chemins[(sommet1, sommet2)] = new List<int> { sommet1, sommet2 };
+                        }
+                    }
+                }
+            }
+
+            // Algorithme de Floyd-Warshall
+            foreach (var k in sommets)
+            {
+                foreach (var i in sommets)
+                {
+                    foreach (var j in sommets)
+                    {
+                        if (distances[(i, k)] + distances[(k, j)] < distances[(i, j)])
+                        {
+                            distances[(i, j)] = distances[(i, k)] + distances[(k, j)];
+
+                            // Mise à jour du chemin
+                            var nouveauChemin = new List<int>();
+                            nouveauChemin.AddRange(chemins[(i, k)].Take(chemins[(i, k)].Count - 1)); // Sans le dernier élément
+                            nouveauChemin.AddRange(chemins[(k, j)]);
+                            chemins[(i, j)] = nouveauChemin;
+                        }
+                    }
+                }
+            }
+
+            // Combiner distances et chemins dans un seul résultat
+            var resultat = new Dictionary<(int, int), (double, List<int>)>();
+            foreach (var key in distances.Keys)
+            {
+                resultat[key] = (distances[key], chemins[key]);
+            }
+
+            return resultat;
+        }
+
+        // Méthode pour obtenir le chemin entre deux stations spécifiques
+        public (List<string>, double, List<(string, string, double)>) TrouverChemin(string stationDepart, string stationArrivee)
+        {
+            var sommetsDepart = Noeuds.Values.Where(n => n.Libelle == stationDepart).Select(n => n.Sommet).ToList();
+            var sommetsArrivee = Noeuds.Values.Where(n => n.Libelle == stationArrivee).Select(n => n.Sommet).ToList();
+
+            if (!sommetsDepart.Any() || !sommetsArrivee.Any())
+            {
+                Console.WriteLine("Station de départ ou d'arrivée introuvable.");
+                return (new List<string>(), 0, new List<(string, string, double)>());
+            }
+
+            // Calculer tous les chemins avec Floyd-Warshall
+            var tousChemins = AlgoFloydWarshall();
+
+            // Trouver le meilleur chemin parmi toutes les combinaisons de départ/arrivée
+            double meilleurTemps = double.PositiveInfinity;
+            List<int> meilleurChemin = null;
+
+            foreach (var depart in sommetsDepart)
+            {
+                foreach (var arrivee in sommetsArrivee)
+                {
+                    if (tousChemins.ContainsKey((depart, arrivee)))
+                    {
+                        var (temps, chemin) = tousChemins[(depart, arrivee)];
+                        if (temps < meilleurTemps)
+                        {
+                            meilleurTemps = temps;
+                            meilleurChemin = chemin;
+                        }
+                    }
+                }
+            }
+
+            if (meilleurChemin == null)
+            {
+                Console.WriteLine("Aucun chemin trouvé entre ces stations.");
+                return (new List<string>(), 0, new List<(string, string, double)>());
+            }
+
+            // Construire la liste des stations et des étapes
+            var stations = new List<string>();
+            var etapes = new List<(string, string, double)>();
+
+            for (int i = 0; i < meilleurChemin.Count; i++)
+            {
+                int sommet = meilleurChemin[i];
+                stations.Add(Noeuds[sommet].Libelle);
+
+                if (i > 0)
+                {
+                    int sommetPrecedent = meilleurChemin[i - 1];
+                    string stationPrecedente = Noeuds[sommetPrecedent].Libelle;
+                    string stationActuelle = Noeuds[sommet].Libelle;
+                    double tempsEtape;
+
+                    // Vérifier si c'est un changement de ligne (même nom de station)
+                    if (stationPrecedente == stationActuelle)
+                    {
+                        tempsEtape = Noeuds[sommetPrecedent].TempsChangement;
+                        etapes.Add((stationPrecedente, stationActuelle, tempsEtape));
+                    }
+                    else
+                    {
+                        // Temps direct entre stations
+                        tempsEtape = ListeAdjacence[sommetPrecedent][sommet];
+                        etapes.Add((stationPrecedente, stationActuelle, tempsEtape));
+                    }
+                }
+            }
+
+            return (stations, meilleurTemps, etapes);
+        }
+
+        public void ComparerAlgorithmes(string depart, string arrivee)
+        {
+            Stopwatch stopwatch = new Stopwatch();
+
+            stopwatch.Start();
+            var dijkstraResult = AlgoDjikstra(depart, arrivee);
+            stopwatch.Stop();
+            long dijkstraTime = stopwatch.ElapsedMilliseconds;
+
+            Console.WriteLine($"Temps d'exécution de Dijkstra : {dijkstraTime} ms");
+
+            stopwatch.Restart();
+            var bellmanfordResult = AlgoBellmanFord(depart, arrivee);
+            stopwatch.Stop();
+            long bellmanfordTime = stopwatch.ElapsedMilliseconds;
+
+            Console.WriteLine($"Temps d'exécution de Bellman-Ford : {bellmanfordTime} ms");
+
+            stopwatch.Restart();
+            var floydwarshallResult = TrouverChemin(depart, arrivee);
+            stopwatch.Stop();
+            long floydwarshallTime = stopwatch.ElapsedMilliseconds;
+
+            Console.WriteLine($"Temps d'exécution de Floyd-Warshall : {floydwarshallTime} ms");
         }
 
 
