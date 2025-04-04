@@ -32,7 +32,7 @@ namespace PSI_Interface
                 adapter = new MySqlDataAdapter("SELECT * FROM Utilisateur", connection);
                 utilisateursTable = new DataTable();
                 adapter.Fill(utilisateursTable);
-                dataGridViewUtilisateurs.DataSource = utilisateursTable; ///(Utile pour vérifier que le compte a bien été créé
+                ///dataGridViewUtilisateurs.DataSource = utilisateursTable; ///(Utile pour vérifier que le compte a bien été créé
             }
             catch (Exception ex)
             {
@@ -95,6 +95,10 @@ namespace PSI_Interface
                                 Email = "";
                                 Mot_De_Passe = "";
                                 Metro = "";
+
+                                Accueil accueil = new Accueil();
+                                accueil.Show();
+                                this.Hide();
                             }
                             else
                             {
@@ -108,6 +112,13 @@ namespace PSI_Interface
                     }
                 }
             }
+        }
+
+        private void bt_retour_Click(object sender, EventArgs e)
+        {
+            Accueil accueil = new Accueil();
+            accueil.Show();
+            this.Hide();
         }
     }
 }

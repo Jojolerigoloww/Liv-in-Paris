@@ -28,14 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            /// Affichage de l'ensemble des utilisateurs
-            this.dataGridViewUtilisateurs = new System.Windows.Forms.DataGridView();
+            /*this.dataGridViewUtilisateurs = new System.Windows.Forms.DataGridView();
             this.SuspendLayout();
             this.dataGridViewUtilisateurs.Location = new System.Drawing.Point(12, 12);
             this.dataGridViewUtilisateurs.Size = new System.Drawing.Size(500, 300);
             this.Controls.Add(this.dataGridViewUtilisateurs);
-
-            this.ResumeLayout(false);
+            this.ResumeLayout(false);*/
 
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CréationCompte));
             lbl_titre = new Label();
@@ -54,6 +52,7 @@
             txt_metro = new TextBox();
             pictureBox1 = new PictureBox();
             bt_valider = new Button();
+            bt_retour = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -63,9 +62,9 @@
             lbl_titre.AutoSize = true;
             lbl_titre.BackColor = Color.FromArgb(250, 191, 80);
             lbl_titre.Font = new Font("Segoe UI", 36F);
-            lbl_titre.Location = new Point(28, 22);
+            lbl_titre.Location = new Point(32, 29);
             lbl_titre.Name = "lbl_titre";
-            lbl_titre.Size = new Size(448, 65);
+            lbl_titre.Size = new Size(561, 81);
             lbl_titre.TabIndex = 1;
             lbl_titre.Text = "Création du compte";
             lbl_titre.TextAlign = ContentAlignment.MiddleCenter;
@@ -75,9 +74,9 @@
             lbl_nom.AutoSize = true;
             lbl_nom.BackColor = Color.FromArgb(250, 191, 80);
             lbl_nom.Font = new Font("Segoe UI", 12F);
-            lbl_nom.Location = new Point(28, 121);
+            lbl_nom.Location = new Point(32, 161);
             lbl_nom.Name = "lbl_nom";
-            lbl_nom.Size = new Size(45, 21);
+            lbl_nom.Size = new Size(56, 28);
             lbl_nom.TabIndex = 2;
             lbl_nom.Text = "Nom";
             // 
@@ -86,9 +85,9 @@
             lbl_prenom.AutoSize = true;
             lbl_prenom.BackColor = Color.FromArgb(250, 191, 80);
             lbl_prenom.Font = new Font("Segoe UI", 12F);
-            lbl_prenom.Location = new Point(28, 220);
+            lbl_prenom.Location = new Point(32, 293);
             lbl_prenom.Name = "lbl_prenom";
-            lbl_prenom.Size = new Size(65, 21);
+            lbl_prenom.Size = new Size(80, 28);
             lbl_prenom.TabIndex = 3;
             lbl_prenom.Text = "Prénom";
             // 
@@ -97,9 +96,9 @@
             lbl_email.AutoSize = true;
             lbl_email.BackColor = Color.FromArgb(250, 191, 80);
             lbl_email.Font = new Font("Segoe UI", 12F);
-            lbl_email.Location = new Point(259, 121);
+            lbl_email.Location = new Point(296, 161);
             lbl_email.Name = "lbl_email";
-            lbl_email.Size = new Size(48, 21);
+            lbl_email.Size = new Size(59, 28);
             lbl_email.TabIndex = 5;
             lbl_email.Text = "Email";
             // 
@@ -108,9 +107,9 @@
             lbl_adresse.AutoSize = true;
             lbl_adresse.BackColor = Color.FromArgb(250, 191, 80);
             lbl_adresse.Font = new Font("Segoe UI", 12F);
-            lbl_adresse.Location = new Point(28, 321);
+            lbl_adresse.Location = new Point(32, 428);
             lbl_adresse.Name = "lbl_adresse";
-            lbl_adresse.Size = new Size(65, 21);
+            lbl_adresse.Size = new Size(80, 28);
             lbl_adresse.TabIndex = 4;
             lbl_adresse.Text = "Adresse";
             // 
@@ -119,9 +118,9 @@
             lbl_metro.AutoSize = true;
             lbl_metro.BackColor = Color.FromArgb(250, 191, 80);
             lbl_metro.Font = new Font("Segoe UI", 12F);
-            lbl_metro.Location = new Point(259, 321);
+            lbl_metro.Location = new Point(296, 428);
             lbl_metro.Name = "lbl_metro";
-            lbl_metro.Size = new Size(213, 21);
+            lbl_metro.Size = new Size(269, 28);
             lbl_metro.TabIndex = 7;
             lbl_metro.Text = "Arrêt de Métro le plus proche";
             // 
@@ -130,9 +129,9 @@
             lbl_mdp.AutoSize = true;
             lbl_mdp.BackColor = Color.FromArgb(250, 191, 80);
             lbl_mdp.Font = new Font("Segoe UI", 12F);
-            lbl_mdp.Location = new Point(259, 220);
+            lbl_mdp.Location = new Point(296, 293);
             lbl_mdp.Name = "lbl_mdp";
-            lbl_mdp.Size = new Size(101, 21);
+            lbl_mdp.Size = new Size(127, 28);
             lbl_mdp.TabIndex = 6;
             lbl_mdp.Text = "Mot de Passe";
             // 
@@ -140,9 +139,10 @@
             // 
             bt_quitter.BackColor = Color.FromArgb(250, 191, 80);
             bt_quitter.Font = new Font("Segoe UI", 14F);
-            bt_quitter.Location = new Point(582, 30);
+            bt_quitter.Location = new Point(665, 40);
+            bt_quitter.Margin = new Padding(3, 4, 3, 4);
             bt_quitter.Name = "bt_quitter";
-            bt_quitter.Size = new Size(174, 54);
+            bt_quitter.Size = new Size(199, 72);
             bt_quitter.TabIndex = 12;
             bt_quitter.Text = "Quitter";
             bt_quitter.UseVisualStyleBackColor = false;
@@ -150,53 +150,60 @@
             // 
             // txt_nom
             // 
-            txt_nom.Location = new Point(26, 163);
+            txt_nom.Location = new Point(30, 217);
+            txt_nom.Margin = new Padding(3, 4, 3, 4);
             txt_nom.Name = "txt_nom";
-            txt_nom.Size = new Size(176, 23);
+            txt_nom.Size = new Size(201, 27);
             txt_nom.TabIndex = 13;
             // 
             // txt_prenom
             // 
-            txt_prenom.Location = new Point(26, 260);
+            txt_prenom.Location = new Point(30, 347);
+            txt_prenom.Margin = new Padding(3, 4, 3, 4);
             txt_prenom.Name = "txt_prenom";
-            txt_prenom.Size = new Size(176, 23);
+            txt_prenom.Size = new Size(201, 27);
             txt_prenom.TabIndex = 14;
             // 
             // txt_adresse
             // 
-            txt_adresse.Location = new Point(26, 369);
+            txt_adresse.Location = new Point(30, 492);
+            txt_adresse.Margin = new Padding(3, 4, 3, 4);
             txt_adresse.Name = "txt_adresse";
-            txt_adresse.Size = new Size(176, 23);
+            txt_adresse.Size = new Size(201, 27);
             txt_adresse.TabIndex = 15;
             // 
             // txt_email
             // 
-            txt_email.Location = new Point(259, 163);
+            txt_email.Location = new Point(296, 217);
+            txt_email.Margin = new Padding(3, 4, 3, 4);
             txt_email.Name = "txt_email";
-            txt_email.Size = new Size(176, 23);
+            txt_email.Size = new Size(201, 27);
             txt_email.TabIndex = 16;
             // 
             // txt_mdp
             // 
-            txt_mdp.Location = new Point(259, 260);
+            txt_mdp.Location = new Point(296, 347);
+            txt_mdp.Margin = new Padding(3, 4, 3, 4);
             txt_mdp.Name = "txt_mdp";
-            txt_mdp.Size = new Size(176, 23);
+            txt_mdp.Size = new Size(201, 27);
             txt_mdp.TabIndex = 17;
             // 
             // txt_metro
             // 
-            txt_metro.Location = new Point(259, 369);
+            txt_metro.Location = new Point(296, 492);
+            txt_metro.Margin = new Padding(3, 4, 3, 4);
             txt_metro.Name = "txt_metro";
-            txt_metro.Size = new Size(176, 23);
+            txt_metro.Size = new Size(201, 27);
             txt_metro.TabIndex = 18;
             // 
             // pictureBox1
             // 
             pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox1.Location = new Point(574, 121);
+            pictureBox1.Location = new Point(658, 245);
+            pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(182, 192);
+            pictureBox1.Size = new Size(208, 199);
             pictureBox1.TabIndex = 19;
             pictureBox1.TabStop = false;
             // 
@@ -204,20 +211,35 @@
             // 
             bt_valider.BackColor = Color.FromArgb(250, 191, 80);
             bt_valider.Font = new Font("Segoe UI", 14F);
-            bt_valider.Location = new Point(582, 349);
+            bt_valider.Location = new Point(665, 465);
+            bt_valider.Margin = new Padding(3, 4, 3, 4);
             bt_valider.Name = "bt_valider";
-            bt_valider.Size = new Size(174, 54);
+            bt_valider.Size = new Size(199, 72);
             bt_valider.TabIndex = 20;
             bt_valider.Text = "Valider";
             bt_valider.UseVisualStyleBackColor = false;
             bt_valider.Click += bt_valider_Click;
             // 
+            // bt_retour
+            // 
+            bt_retour.BackColor = Color.FromArgb(250, 191, 80);
+            bt_retour.Font = new Font("Segoe UI", 14F);
+            bt_retour.Location = new Point(665, 138);
+            bt_retour.Margin = new Padding(3, 4, 3, 4);
+            bt_retour.Name = "bt_retour";
+            bt_retour.Size = new Size(199, 72);
+            bt_retour.TabIndex = 21;
+            bt_retour.Text = "Retour";
+            bt_retour.UseVisualStyleBackColor = false;
+            bt_retour.Click += bt_retour_Click;
+            // 
             // CréationCompte
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(212, 77, 32);
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(914, 600);
+            Controls.Add(bt_retour);
             Controls.Add(bt_valider);
             Controls.Add(pictureBox1);
             Controls.Add(txt_metro);
@@ -234,6 +256,7 @@
             Controls.Add(lbl_prenom);
             Controls.Add(lbl_nom);
             Controls.Add(lbl_titre);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "CréationCompte";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "CréationCompte";
@@ -260,5 +283,6 @@
         private TextBox txt_metro;
         private PictureBox pictureBox1;
         private Button bt_valider;
+        private Button bt_retour;
     }
 }

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PSI_Interface")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ca83e6c114afd4a7324a5fcebdff1d421b4f9697")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+470e7da0a8f4fdbf4800060bc869045b79095955")]
 [assembly: System.Reflection.AssemblyProductAttribute("PSI_Interface")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PSI_Interface")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
