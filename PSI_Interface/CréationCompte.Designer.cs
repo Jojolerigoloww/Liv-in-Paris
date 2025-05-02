@@ -28,14 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            /*this.dataGridViewUtilisateurs = new System.Windows.Forms.DataGridView();
-            this.SuspendLayout();
-            this.dataGridViewUtilisateurs.Location = new System.Drawing.Point(12, 12);
-            this.dataGridViewUtilisateurs.Size = new System.Drawing.Size(500, 300);
-            this.Controls.Add(this.dataGridViewUtilisateurs);
-            this.ResumeLayout(false);*/
-
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CréationCompte));
+            dataGridViewUtilisateurs = new DataGridView();
             lbl_titre = new Label();
             lbl_nom = new Label();
             lbl_prenom = new Label();
@@ -52,9 +46,19 @@
             txt_metro = new TextBox();
             pictureBox1 = new PictureBox();
             bt_valider = new Button();
-            bt_retour = new Button();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewUtilisateurs).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
+            // 
+            // dataGridViewUtilisateurs
+            // 
+            dataGridViewUtilisateurs.ColumnHeadersHeight = 29;
+            dataGridViewUtilisateurs.Location = new Point(22, 84);
+            dataGridViewUtilisateurs.Margin = new Padding(3, 4, 3, 4);
+            dataGridViewUtilisateurs.Name = "dataGridViewUtilisateurs";
+            dataGridViewUtilisateurs.RowHeadersWidth = 51;
+            dataGridViewUtilisateurs.Size = new Size(571, 400);
+            dataGridViewUtilisateurs.TabIndex = 0;
             // 
             // lbl_titre
             // 
@@ -200,10 +204,10 @@
             // 
             pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox1.Location = new Point(658, 245);
+            pictureBox1.Location = new Point(656, 161);
             pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(208, 199);
+            pictureBox1.Size = new Size(208, 256);
             pictureBox1.TabIndex = 19;
             pictureBox1.TabStop = false;
             // 
@@ -220,26 +224,13 @@
             bt_valider.UseVisualStyleBackColor = false;
             bt_valider.Click += bt_valider_Click;
             // 
-            // bt_retour
-            // 
-            bt_retour.BackColor = Color.FromArgb(250, 191, 80);
-            bt_retour.Font = new Font("Segoe UI", 14F);
-            bt_retour.Location = new Point(665, 138);
-            bt_retour.Margin = new Padding(3, 4, 3, 4);
-            bt_retour.Name = "bt_retour";
-            bt_retour.Size = new Size(199, 72);
-            bt_retour.TabIndex = 21;
-            bt_retour.Text = "Retour";
-            bt_retour.UseVisualStyleBackColor = false;
-            bt_retour.Click += bt_retour_Click;
-            // 
             // CréationCompte
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(212, 77, 32);
             ClientSize = new Size(914, 600);
-            Controls.Add(bt_retour);
+            //Controls.Add(dataGridViewUtilisateurs); //(Ligne a passer en commentaire pour supprimer la liste des utilisateurs)
             Controls.Add(bt_valider);
             Controls.Add(pictureBox1);
             Controls.Add(txt_metro);
@@ -260,6 +251,7 @@
             Name = "CréationCompte";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "CréationCompte";
+            ((System.ComponentModel.ISupportInitialize)dataGridViewUtilisateurs).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -283,6 +275,5 @@
         private TextBox txt_metro;
         private PictureBox pictureBox1;
         private Button bt_valider;
-        private Button bt_retour;
     }
 }
