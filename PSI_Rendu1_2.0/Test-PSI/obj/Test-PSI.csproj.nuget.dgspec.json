@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\basti\\Documents\\A2\\Pb Scientifique\\2ème Rendu\\Liv-in-Paris\\PSI_Rendu1_2.0\\Test-PSI\\Test-PSI.csproj": {}
+    "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Rendu1_2.0\\Test-PSI\\Test-PSI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\basti\\Documents\\A2\\Pb Scientifique\\2ème Rendu\\Liv-in-Paris\\PSI_Rendu1_2.0\\PSI_Rendu1_2.0\\PSI_Rendu1_2.0.csproj": {
+    "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Rendu1_2.0\\PSI_Rendu1_2.0\\PSI_Rendu1_2.0.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\basti\\Documents\\A2\\Pb Scientifique\\2ème Rendu\\Liv-in-Paris\\PSI_Rendu1_2.0\\PSI_Rendu1_2.0\\PSI_Rendu1_2.0.csproj",
+        "projectUniqueName": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Rendu1_2.0\\PSI_Rendu1_2.0\\PSI_Rendu1_2.0.csproj",
         "projectName": "PSI_Rendu1_2.0",
-        "projectPath": "C:\\Users\\basti\\Documents\\A2\\Pb Scientifique\\2ème Rendu\\Liv-in-Paris\\PSI_Rendu1_2.0\\PSI_Rendu1_2.0\\PSI_Rendu1_2.0.csproj",
+        "projectPath": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Rendu1_2.0\\PSI_Rendu1_2.0\\PSI_Rendu1_2.0.csproj",
         "packagesPath": "C:\\Users\\basti\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\basti\\Documents\\A2\\Pb Scientifique\\2ème Rendu\\Liv-in-Paris\\PSI_Rendu1_2.0\\PSI_Rendu1_2.0\\obj\\",
+        "outputPath": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Rendu1_2.0\\PSI_Rendu1_2.0\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -83,14 +83,14 @@
         }
       }
     },
-    "C:\\Users\\basti\\Documents\\A2\\Pb Scientifique\\2ème Rendu\\Liv-in-Paris\\PSI_Rendu1_2.0\\Test-PSI\\Test-PSI.csproj": {
+    "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Rendu1_2.0\\Test-PSI\\Test-PSI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\basti\\Documents\\A2\\Pb Scientifique\\2ème Rendu\\Liv-in-Paris\\PSI_Rendu1_2.0\\Test-PSI\\Test-PSI.csproj",
+        "projectUniqueName": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Rendu1_2.0\\Test-PSI\\Test-PSI.csproj",
         "projectName": "Test-PSI",
-        "projectPath": "C:\\Users\\basti\\Documents\\A2\\Pb Scientifique\\2ème Rendu\\Liv-in-Paris\\PSI_Rendu1_2.0\\Test-PSI\\Test-PSI.csproj",
+        "projectPath": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Rendu1_2.0\\Test-PSI\\Test-PSI.csproj",
         "packagesPath": "C:\\Users\\basti\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\basti\\Documents\\A2\\Pb Scientifique\\2ème Rendu\\Liv-in-Paris\\PSI_Rendu1_2.0\\Test-PSI\\obj\\",
+        "outputPath": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Rendu1_2.0\\Test-PSI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -111,8 +111,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\basti\\Documents\\A2\\Pb Scientifique\\2ème Rendu\\Liv-in-Paris\\PSI_Rendu1_2.0\\PSI_Rendu1_2.0\\PSI_Rendu1_2.0.csproj": {
-                "projectPath": "C:\\Users\\basti\\Documents\\A2\\Pb Scientifique\\2ème Rendu\\Liv-in-Paris\\PSI_Rendu1_2.0\\PSI_Rendu1_2.0\\PSI_Rendu1_2.0.csproj"
+              "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Rendu1_2.0\\PSI_Rendu1_2.0\\PSI_Rendu1_2.0.csproj": {
+                "projectPath": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Rendu1_2.0\\PSI_Rendu1_2.0\\PSI_Rendu1_2.0.csproj"
               }
             }
           }
