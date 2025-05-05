@@ -36,8 +36,12 @@ namespace PSI_Interface
             {
                 MessageBox.Show("Veuillez remplir tous les champs.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
             else
             {
+                string cheminCsv = "MetroParisNoeuds.csv"; // Mets ici le chemin complet ou relatif
+                HashSet<string> stationsValides = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+
                 string Id_User = Guid.NewGuid().ToString("N");
                 string Nom_User = txt_nom.Text;
                 string Prenom_User = txt_prenom.Text;
