@@ -40,6 +40,7 @@ FROM Commande
 JOIN Constitue ON Commande.ID_Commande = Constitue.ID_Commande
 JOIN Ligne_Commande ON Constitue.ID_Ligne = Ligne_Commande.ID_Ligne
 JOIN Plat ON Ligne_Commande.ID_Ligne = Plat.ID_Ligne
+WHERE Adresse_Livraison LIKE "%Paris"
 ORDER BY Commande.ID_Commande,Plat.Prix;
 
 SELECT c.ID_Commande, SUM(p.Prix) AS Prix_Total

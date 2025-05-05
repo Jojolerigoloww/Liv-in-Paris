@@ -93,11 +93,7 @@ VALUES
 ('C679', 'U682'),
 ('C680', 'U683'),
 ('C681', 'U684'),
-('C682', 'U685'),
-('C683', 'U686'),
-('C684', 'U687'),
-('C685', 'U688'),
-('C686', 'U689');
+('C682', 'U685');
 
 INSERT INTO `livin`.`particulier` (`ID_Particulier`, `Mot_De_Passe_Particulier`, `ID_Client`) 
 VALUES 
@@ -163,8 +159,7 @@ VALUES
 ('E682', 'eBay', 'Sarah Pelletier', 'ebaypass', 'C682'),
 ('E683', 'PayPal', 'Matthieu Leroy', 'paypalpass', 'C683'),
 ('E684', 'LinkedIn', 'Manon Blanchard', 'linkedinpass', 'C684'),
-('E685', 'Dropbox', 'Antoine Giraud', 'dropboxpass', 'C685'),
-('E686', 'Slack', 'Léa Collin', 'slackpass', 'C686');
+('E685', 'Dropbox', 'Antoine Giraud', 'dropboxpass', 'C685');
 
 -- Peuplement de la table commande
 INSERT INTO `livin`.`commande` (`ID_Commande`, `Date_Commande`, `ID_Client`) 
@@ -197,8 +192,7 @@ VALUES
 ('CMD31', '2024-03-26 10:15:00', 'C682'),
 ('CMD32', '2024-03-27 11:45:00', 'C683'),
 ('CMD33', '2024-03-28 13:30:00', 'C684'),
-('CMD34', '2024-03-29 14:00:00', 'C685'),
-('CMD35', '2024-03-30 15:15:00', 'C686');
+('CMD34', '2024-03-29 14:00:00', 'C685');
 
 -- Peuplement de la table recette
 INSERT INTO `livin`.`recette` (`ID_Recette`, `Nom_Recette`, `Ingrédients`, `Type_Plat`, `Nationalité`, `Portions`, `Régime_Alimentaire`, `ID_Cuisinier`) 
@@ -263,41 +257,35 @@ VALUES
 ('L37', '13 rue de la Montagne, Paris'),
 ('L38', '15 rue des Champs, Lyon');
 
-
 -- Peuplement de la table plat
-INSERT INTO `livin`.`plat` (`ID_Plat`, `Nom_Plat`, `Date_Création`, `Date_Péremption`, `Prix`, `Photo`, `ID_Ligne`, `ID_Cuisinier`) 
+INSERT INTO `livin`.`plat` (`ID_Plat`, `Nom_Plat`, `Date_Création`, `Date_Péremption`, `Prix`, `Photo`, `ID_Cuisinier`) 
 VALUES 
-('P10', 'Poulet Rôti', '2024-03-01', '2024-03-05', 16.50, NULL, 'L9', 'C657'),
-('P11', 'Burger Classique', '2024-03-02', '2024-03-06', 12.00, NULL, 'L10', 'C658'),
-('P12', 'Tacos au Poulet', '2024-03-03', '2024-03-07', 10.00, NULL, 'L11', 'C659'),
-('P13', 'Quiche Lorraine', '2024-03-04', '2024-03-08', 14.00, NULL, 'L12', 'C660'),
-('P14', 'Salade de Quinoa', '2024-03-05', '2024-03-09', 13.00, NULL, 'L13', 'C661'),
-('P15', 'Gratin Dauphinois', '2024-03-06', '2024-03-10', 11.50, NULL, 'L14', 'C662'),
-('P16', 'Pizza Calzone', '2024-03-07', '2024-03-11', 15.00, NULL, 'L15', 'C663'),
-('P17', 'Tajine de Légumes', '2024-03-08', '2024-03-12', 18.00, NULL, 'L16', 'C664'),
-('P18', 'Spaghetti Bolognaise', '2024-03-09', '2024-03-13', 14.50, NULL, 'L17', 'C665'),
-('P19', 'Ratatouille', '2024-03-10', '2024-03-14', 13.50, NULL, 'L18', 'C666'),
-('P20', 'Curry de Poulet', '2024-03-11', '2024-03-15', 16.00, NULL, 'L19', 'C667'),
-('P21', 'Boeuf Stroganoff', '2024-03-12', '2024-03-16', 18.50, NULL, 'L20', 'C668'),
-('P22', 'Sushi Combo', '2024-03-13', '2024-03-17', 20.00, NULL, 'L21', 'C669'),
-('P23', 'Salade Niçoise', '2024-03-14', '2024-03-18', 12.50, NULL, 'L22', 'C670'),
-('P24', 'Ribs BBQ', '2024-03-15', '2024-03-19', 22.00, NULL, 'L23', 'C671'),
-('P25', 'Poisson en Papillote', '2024-03-16', '2024-03-20', 17.00, NULL, 'L24', 'C672'),
-('P26', 'Pâtes Pesto', '2024-03-17', '2024-03-21', 14.00, NULL, 'L25', 'C673'),
-('P27', 'Salmon Burger', '2024-03-18', '2024-03-22', 15.50, NULL, 'L26', 'C674'),
-('P28', 'Moussaka', '2024-03-19', '2024-03-23', 16.00, NULL, 'L27', 'C675'),
-('P29', 'Ceviche', '2024-03-20', '2024-03-24', 18.50, NULL, 'L28', 'C676'),
-('P30', 'Pad Thai', '2024-03-21', '2024-03-25', 17.50, NULL, 'L29', 'C677'),
-('P31', 'Poulet à la Provençale', '2024-03-22', '2024-03-26', 19.00, NULL, 'L30', 'C678'),
-('P32', 'Chili Con Carne', '2024-03-23', '2024-03-27', 15.50, NULL, 'L31', 'C679'),
-('P33', 'Risotto aux Champignons', '2024-03-24', '2024-03-28', 16.00, NULL, 'L32', 'C680'),
-('P34', 'Lasagne Végétarienne', '2024-03-25', '2024-03-29', 18.00, NULL, 'L33', 'C681'),
-('P35', 'Steak Frites', '2024-03-26', '2024-03-30', 22.00, NULL, 'L34', 'C682'),
-('P36', 'Burgers Végétariens', '2024-03-27', '2024-03-31', 13.00, NULL, 'L35', 'C683'),
-('P37', 'Pho Vietnamien', '2024-03-28', '2024-04-01', 14.50, NULL, 'L36', 'C684'),
-('P38', 'Sauté de Porc', '2024-03-29', '2024-04-02', 16.00, NULL, 'L37', 'C685'),
-('P39', 'Omelette au Fromage', '2024-03-30', '2024-04-03', 10.50, NULL, 'L38', 'C686');
-
+('P10', 'Poulet Rôti', '2024-03-01', '2024-03-05', 16.50, NULL, 'C657'),
+('P11', 'Burger Classique', '2024-03-02', '2024-03-06', 12.00, NULL, 'C658'),
+('P12', 'Tacos au Poulet', '2024-03-03', '2024-03-07', 10.00, NULL, 'C659'),
+('P13', 'Quiche Lorraine', '2024-03-04', '2024-03-08', 14.00, NULL, 'C660'),
+('P14', 'Salade de Quinoa', '2024-03-05', '2024-03-09', 13.00, NULL, 'C661'),
+('P15', 'Gratin Dauphinois', '2024-03-06', '2024-03-10', 11.50, NULL, 'C662'),
+('P16', 'Pizza Calzone', '2024-03-07', '2024-03-11', 15.00, NULL, 'C663'),
+('P17', 'Tajine de Légumes', '2024-03-08', '2024-03-12', 18.00, NULL, 'C664'),
+('P18', 'Spaghetti Bolognaise', '2024-03-09', '2024-03-13', 14.50, NULL, 'C665'),
+('P19', 'Ratatouille', '2024-03-10', '2024-03-14', 13.50, NULL, 'C666'),
+('P20', 'Curry de Poulet', '2024-03-11', '2024-03-15', 16.00, NULL, 'C667'),
+('P21', 'Boeuf Stroganoff', '2024-03-12', '2024-03-16', 18.50, NULL, 'C668'),
+('P22', 'Sushi Combo', '2024-03-13', '2024-03-17', 20.00, NULL,'C669'),
+('P23', 'Salade Niçoise', '2024-03-14', '2024-03-18', 12.50, NULL, 'C670'),
+('P24', 'Ribs BBQ', '2024-03-15', '2024-03-19', 22.00, NULL, 'C671'),
+('P25', 'Poisson en Papillote', '2024-03-16', '2024-03-20', 17.00, NULL, 'C672'),
+('P26', 'Pâtes Pesto', '2024-03-17', '2024-03-21', 14.00, NULL, 'C673'),
+('P27', 'Salmon Burger', '2024-03-18', '2024-03-22', 15.50, NULL, 'C674'),
+('P28', 'Moussaka', '2024-03-19', '2024-03-23', 16.00, NULL, 'C675'),
+('P29', 'Ceviche', '2024-03-20', '2024-03-24', 18.50, NULL, 'C676'),
+('P30', 'Pad Thai', '2024-03-21', '2024-03-25', 17.50, NULL, 'C677'),
+('P31', 'Poulet à la Provençale', '2024-03-22', '2024-03-26', 19.00, NULL, 'C678'),
+('P32', 'Chili Con Carne', '2024-03-23', '2024-03-27', 15.50, NULL, 'C679'),
+('P33', 'Risotto aux Champignons', '2024-03-24', '2024-03-28', 16.00, NULL, 'C680'),
+('P34', 'Lasagne Végétarienne', '2024-03-25', '2024-03-29', 18.00, NULL, 'C681'),
+('P35', 'Steak Frites', '2024-03-26', '2024-03-30', 22.00, NULL, 'C682');
 
 
 -- Peuplement des Notes (Évaluations des cuisiniers)
@@ -316,29 +304,24 @@ VALUES
 ('C667', 'C667', '2024-03-12 19:30:00', 4.90, 'Un plat délicieux, j’adore.'),
 ('C668', 'C668', '2024-03-13 21:00:00', 5.00, 'Tout était parfait, je recommande vivement !'),
 ('C669', 'C669', '2024-03-14 10:30:00', 4.65, 'Bonne qualité, mais un peu trop sucré à mon goût.'),
-('C670', 'C670', '2024-03-15 12:00:00', 4.80, 'Très bon, mais l’assaisonnement pourrait être plus relevé.'),
+('C670', 'C670', '2024-03-15 12:00:00', 4.80, 'Très bon, mais pourrait être plus relevé.'),
 ('C671', 'C671', '2024-03-16 13:00:00', 5.00, 'Un délice, je reviendrai !'),
 ('C672', 'C672', '2024-03-17 14:45:00', 4.55, 'Très bon repas mais un peu trop copieux.'),
-('C673', 'C673', '2024-03-18 16:30:00', 4.60, 'Bon, mais la viande était un peu trop cuite à mon goût.'),
+('C673', 'C673', '2024-03-18 16:30:00', 4.60, 'Bon, mais viande un peu trop cuite à mon goût.'),
 ('C674', 'C674', '2024-03-19 18:00:00', 5.00, 'Incroyablement bon, j’ai adoré chaque bouchée.'),
-('C675', 'C675', '2024-03-20 14:45:00', 4.90, 'Plat très savoureux, parfait équilibre des saveurs.'),
-('C676', 'C676', '2024-03-21 13:15:00', 4.80, 'Très bon, mais j’aurais préféré un peu plus de légumes.'),
+('C675', 'C675', '2024-03-20 14:45:00', 4.90, 'Parfait équilibre des saveurs.'),
+('C676', 'C676', '2024-03-21 13:15:00', 4.80, 'Très bon, mais j’aurais aimé plus de légumes.'),
 ('C677', 'C677', '2024-03-22 19:00:00', 5.00, 'C’était parfait, je recommande à 100%.'),
 ('C678', 'C678', '2024-03-23 17:30:00', 4.75, 'Très bon mais un peu trop épicé pour ma part.'),
 ('C679', 'C679', '2024-03-24 20:30:00', 4.90, 'Plat bien préparé, j’ai beaucoup aimé.'),
 ('C680', 'C680', '2024-03-25 11:30:00', 5.00, 'Un des meilleurs repas que j’ai eu, parfait.'),
 ('C681', 'C681', '2024-03-26 15:00:00', 4.60, 'Bon plat, mais manquait un peu de sauce.'),
-('C682', 'C682', '2024-03-27 14:00:00', 4.50, 'Bon mais la présentation pouvait être améliorée.'),
-('C683', 'C683', '2024-03-28 17:00:00', 4.85, 'J’ai adoré, mais la portion était un peu petite.'),
-('C684', 'C684', '2024-03-29 13:30:00', 4.70, 'Plat correct, mais manque un peu de fraîcheur.'),
-('C685', 'C685', '2024-03-30 18:15:00', 5.00, 'C’est un régal ! Le goût était parfait.'),
-('C686', 'C686', '2024-03-31 19:45:00', 4.80, 'Très bon repas, mais un peu trop salé pour mon goût.');
+('C682', 'C682', '2024-03-27 14:00:00', 4.50, 'Bon mais la présentation pouvait être améliorée.');
 
 
 -- Peuplement des Utilisations de Recettes par les Cuisiniers
 INSERT INTO `livin`.`utilise` (`ID_Cuisinier`, `ID_Recette`) 
 VALUES 
-('C657', 'R6'),
 ('C658', 'R7'),
 ('C659', 'R8'),
 ('C660', 'R9'),
@@ -362,18 +345,13 @@ VALUES
 ('C678', 'R27'),
 ('C679', 'R28'),
 ('C680', 'R29'),
-('C681', 'R30'),
-('C682', 'R31'),
-('C683', 'R32'),
-('C684', 'R33'),
-('C685', 'R34'),
-('C686', 'R35');
+('C681', 'R30');
 
 
 -- Peuplement des Relations Commande - Ligne de Commande
 INSERT INTO `livin`.`constitue` (`ID_Commande`, `ID_Ligne`) 
 VALUES 
-('CMD6', 'L8'),
+('CMD6', 'L38'),
 ('CMD7', 'L9'),
 ('CMD8', 'L10'),
 ('CMD9', 'L11'),
@@ -401,5 +379,4 @@ VALUES
 ('CMD31', 'L33'),
 ('CMD32', 'L34'),
 ('CMD33', 'L35'),
-('CMD34', 'L36'),
-('CMD35', 'L37');
+('CMD34', 'L36');

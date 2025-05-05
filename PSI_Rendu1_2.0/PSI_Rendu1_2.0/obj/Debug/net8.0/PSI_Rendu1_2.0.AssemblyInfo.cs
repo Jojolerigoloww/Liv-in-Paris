@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PSI_Rendu1_2.0")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3732dbaada79deb56e6d3e6895803729446621cb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b7231fe12dc90ceef8f9ef5b910d723e2531be17")]
 [assembly: System.Reflection.AssemblyProductAttribute("PSI_Rendu1_2.0")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PSI_Rendu1_2.0")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

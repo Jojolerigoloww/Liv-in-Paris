@@ -4,10 +4,34 @@
     <Compile Update="Accueil.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="AppPrincipale.cs">
+    <Compile Update="AjoutPlat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AjoutRecette.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AppAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AppCuisinier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AppUtilisateur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Carte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Commande.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="CréationCompte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="LivreRecette.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Trajet.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

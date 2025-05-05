@@ -76,7 +76,6 @@ CREATE TABLE Ligne_Commande(
    Adresse_Livraison VARCHAR(50),
    PRIMARY KEY(ID_Ligne)
 );
-
 CREATE TABLE Plat(
    ID_Plat VARCHAR(50),
    Nom_Plat VARCHAR(50),
@@ -84,10 +83,8 @@ CREATE TABLE Plat(
    Date_Péremption DATE,
    Prix INT,
    Photo BLOB,
-   ID_Ligne VARCHAR(50) NOT NULL,
    ID_Cuisinier VARCHAR(50) NOT NULL,
    PRIMARY KEY(ID_Plat),
-   FOREIGN KEY(ID_Ligne) REFERENCES Ligne_Commande(ID_Ligne),
    FOREIGN KEY(ID_Cuisinier) REFERENCES Cuisinier(ID_Cuisinier)
 );
 

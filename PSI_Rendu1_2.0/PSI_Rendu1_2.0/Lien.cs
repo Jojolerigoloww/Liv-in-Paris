@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PSI_Rendu1
 {
-    internal class Lien
+    public class Lien
     {
         public Noeud Noeud1 { get; private set; }
         public Noeud Noeud2 { get; private set; }

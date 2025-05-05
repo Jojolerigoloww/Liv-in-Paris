@@ -20,29 +20,10 @@ namespace PSI_Interface
         {
             InitializeComponent();
             connection = new MySqlConnection("SERVER=localhost;PORT=3306;DATABASE=livin;UID=root;PASSWORD=Bastien2109@");
-            LoadUtilisateurs();
         }
         private System.Windows.Forms.DataGridView dataGridViewUtilisateurs;
 
-        private void LoadUtilisateurs()
-        {
-            try
-            {
-                connection.Open();
-                adapter = new MySqlDataAdapter("SELECT * FROM Utilisateur", connection);
-                utilisateursTable = new DataTable();
-                adapter.Fill(utilisateursTable);
-                ///dataGridViewUtilisateurs.DataSource = utilisateursTable; ///(Utile pour vérifier que le compte a bien été créé
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erreur: " + ex.Message);
-            }
-            finally
-            {
-                connection.Close();
-            }
-        }
+
         private void bt_quitter_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -119,6 +100,36 @@ namespace PSI_Interface
             Accueil accueil = new Accueil();
             accueil.Show();
             this.Hide();
+        }
+
+        private void bt_quitter_MouseEnter(object sender, EventArgs e)
+        {
+            bt_quitter.BackColor = Color.White;
+        }
+
+        private void bt_quitter_MouseLeave(object sender, EventArgs e)
+        {
+            bt_quitter.BackColor = Color.FromArgb(250, 191, 80);
+        }
+
+        private void bt_retour_MouseEnter(object sender, EventArgs e)
+        {
+            bt_retour.BackColor = Color.White;
+        }
+
+        private void bt_retour_MouseLeave(object sender, EventArgs e)
+        {
+            bt_retour.BackColor = Color.FromArgb(250, 191, 80);
+        }
+
+        private void bt_valider_MouseEnter(object sender, EventArgs e)
+        {
+            bt_valider.BackColor = Color.White;
+        }
+
+        private void bt_valider_MouseLeave(object sender, EventArgs e)
+        {
+            bt_valider.BackColor = Color.FromArgb(250, 191, 80);
         }
     }
 }

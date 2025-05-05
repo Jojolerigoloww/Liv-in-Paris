@@ -57,8 +57,25 @@ namespace PSI_Interface
 
                                     reader.Close();
 
-                                    AppPrincipale mainForm = new AppPrincipale(nom,prenom);
-                                    mainForm.Show();
+                                    switch (comboBox_statut.SelectedIndex)
+                                    {
+                                        case 0:
+                                            AppUtilisateur Form_Utilisateur = new AppUtilisateur(nom, prenom, Id_User);
+                                            Form_Utilisateur.Show();
+                                            break;
+
+                                        case 1:
+                                            AppCuisinier Form_Cuisinier = new AppCuisinier(nom, prenom, Id_User);
+                                            Form_Cuisinier.Show();
+                                            break;
+
+                                        case 2:
+                                            AppAdmin Form_Admin = new AppAdmin(nom, prenom);
+                                            Form_Admin.Show();
+                                            break;
+                                    }
+
+
                                     this.Hide();
                                 }
                                 else
@@ -81,6 +98,36 @@ namespace PSI_Interface
             CréationCompte compte = new CréationCompte();
             compte.Show();
             this.Hide();
+        }
+
+        private void bt_valider_MouseEnter(object sender, EventArgs e)
+        {
+            bt_valider.BackColor = Color.White;
+        }
+
+        private void bt_valider_MouseLeave(object sender, EventArgs e)
+        {
+            bt_valider.BackColor = Color.FromArgb(250, 191, 80);
+        }
+
+        private void bt_quitter_MouseEnter(object sender, EventArgs e)
+        {
+            bt_quitter.BackColor = Color.White;
+        }
+
+        private void bt_quitter_MouseLeave(object sender, EventArgs e)
+        {
+            bt_quitter.BackColor = Color.FromArgb(250, 191, 80);
+        }
+
+        private void link_NoAccount_MouseEnter(object sender, EventArgs e)
+        {
+            link_NoAccount.LinkColor = Color.White;
+        }
+
+        private void link_NoAccount_MouseLeave(object sender, EventArgs e)
+        {
+            link_NoAccount.LinkColor = Color.FromArgb(250, 191, 80);
         }
     }
 }

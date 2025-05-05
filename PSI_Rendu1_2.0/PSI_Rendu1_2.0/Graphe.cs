@@ -15,7 +15,7 @@ using System.Diagnostics;
 
 namespace PSI_Rendu1
 {
-    internal class Graphe
+    public class Graphe
     {
         public Dictionary<int, Noeud> Noeuds { get; private set; } = new Dictionary<int, Noeud>();
         public List<Lien> Liens { get; private set; } = new List<Lien>();
@@ -740,8 +740,17 @@ namespace PSI_Rendu1
                 return;
             }
 
+            var styleTexteStation = new SKPaint
+            {
+                Color = SKColors.Black,
+                TextSize = 16,
+                IsAntialias = true,
+                TextAlign = SKTextAlign.Center
+            };
+
             int largeurImage = 1200;
-            int hauteurImage = 300;
+            float maxTextWidth = itineraire.Max(nom => styleTexteStation.MeasureText(nom));
+            int hauteurImage = (int)(maxTextWidth + 150);
             int margeHorizontale = 100;
             int margeVerticale = 100;
 
@@ -775,15 +784,7 @@ namespace PSI_Rendu1
                     Color = SKColors.Orange,
                     IsAntialias = true,
                     Style = SKPaintStyle.Fill
-                };
-
-                var styleTexteStation = new SKPaint
-                {
-                    Color = SKColors.Black,
-                    TextSize = 16,
-                    IsAntialias = true,
-                    TextAlign = SKTextAlign.Center
-                };
+                };            
 
                 var styleTextePoids = new SKPaint
                 {
@@ -824,25 +825,46 @@ namespace PSI_Rendu1
                     float rayonNoeud = estChangementLigne ? 12 : 10;
                     canvas.DrawCircle(posX, posY, rayonNoeud, estChangementLigne ? styleChangementLigne : styleNoeud);
 
-                    canvas.DrawText(itineraire[i], posX, posY + 30, styleTexteStation);
+                    canvas.Save();
 
-                    if (estChangementLigne)
-                    {
-                        canvas.DrawText("(Changement)", posX, posY + 50, styleTexteStation);
-                    }
+                    string texte = itineraire[i];
+
+                    // Mesurer la largeur du texte (en horizontal, avant rotation)
+                    float textWidth = styleTexteStation.MeasureText(texte);
+
+                    // Position du cercle (station)
+                    float rotationX = posX;
+                    float rotationY = posY;
+
+                    // Translation jusqu’au cercle
+                    canvas.Translate(rotationX, rotationY);
+
+                    // Rotation antihoraire (texte vertical, haut vers bas)
+                    canvas.RotateDegrees(-90);
+
+                    // Décalage pour que le texte soit centré sur le cercle
+                    // Le texte est maintenant horizontal mais orienté verticalement à l’écran
+                    canvas.Translate(-textWidth / 2, 35);  // 35 pixels = espace entre cercle et début du texte
+
+                    // Dessin du texte
+                    canvas.DrawText(texte, -20, -30, styleTexteStation);
+
+                    canvas.Restore();
+
                 }
+                canvas.DrawText($"Temps total : {tempsTotal:F1} minutes", largeurImage / 2, 30, styleTexteTotal);
 
                 /// Légende
-                canvas.DrawText($"Temps total : {tempsTotal:F1} minutes", largeurImage / 2, 40, styleTexteTotal);
+                float posXLegende = largeurImage - 300;
+                float posYLegende = 40;
 
-                float posXLegende = 30;
-                float posYLegende = hauteurImage - 50;
-
+                // Légende pour "Station"
                 canvas.DrawCircle(posXLegende, posYLegende, 10, styleNoeud);
-                canvas.DrawText("Station", posXLegende + 50, posYLegende + 5, styleTexteStation);
+                canvas.DrawText("Station", posXLegende + 40, posYLegende + 5, styleTexteStation);
 
-                canvas.DrawCircle(posXLegende + 150, posYLegende, 12, styleChangementLigne);
-                canvas.DrawText("Changement de ligne", posXLegende + 250, posYLegende + 5, styleTexteStation);
+                // Légende pour "Changement de ligne"
+                canvas.DrawCircle(posXLegende, posYLegende + 30, 12, styleChangementLigne);
+                canvas.DrawText("Changement de ligne", posXLegende + 90, posYLegende + 35, styleTexteStation);
 
                 /// Sauvegarder l'image
                 using (var image = surface.Snapshot())
