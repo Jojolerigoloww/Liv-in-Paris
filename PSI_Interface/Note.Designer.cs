@@ -133,9 +133,9 @@
             label2.Font = new Font("Segoe UI", 12F);
             label2.Location = new Point(267, 155);
             label2.Name = "label2";
-            label2.Size = new Size(56, 28);
+            label2.Size = new Size(141, 28);
             label2.TabIndex = 29;
-            label2.Text = "Note";
+            label2.Text = "Note (décimal)";
             // 
             // Note
             // 
@@ -153,6 +153,7 @@
             Controls.Add(bt_retour);
             Controls.Add(lbl_titre);
             Name = "Note";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Note";
             Load += Note_Load;
             ResumeLayout(false);

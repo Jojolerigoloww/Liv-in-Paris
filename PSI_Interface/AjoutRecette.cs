@@ -95,7 +95,6 @@ namespace PSI_Interface
                             {
                                 MessageBox.Show("Recette ajouté avec succès !", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                                // Effacer les champs après insertion
                                 Id_Recette = "";
                                 Nom_Recette = "";
                                 Ingredients = "";

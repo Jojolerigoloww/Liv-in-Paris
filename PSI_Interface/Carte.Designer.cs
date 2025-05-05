@@ -39,9 +39,10 @@
             // 
             bt_retour.BackColor = Color.FromArgb(250, 191, 80);
             bt_retour.Font = new Font("Segoe UI", 14F);
-            bt_retour.Location = new Point(614, 9);
+            bt_retour.Location = new Point(702, 12);
+            bt_retour.Margin = new Padding(3, 4, 3, 4);
             bt_retour.Name = "bt_retour";
-            bt_retour.Size = new Size(174, 54);
+            bt_retour.Size = new Size(199, 72);
             bt_retour.TabIndex = 40;
             bt_retour.Text = "Retour";
             bt_retour.UseVisualStyleBackColor = false;
@@ -55,9 +56,9 @@
             lbl_titre.AutoSize = true;
             lbl_titre.BackColor = Color.FromArgb(250, 191, 80);
             lbl_titre.Font = new Font("Segoe UI", 36F);
-            lbl_titre.Location = new Point(12, 9);
+            lbl_titre.Location = new Point(14, 12);
             lbl_titre.Name = "lbl_titre";
-            lbl_titre.Size = new Size(348, 65);
+            lbl_titre.Size = new Size(435, 81);
             lbl_titre.TabIndex = 39;
             lbl_titre.Text = "Carte du métro";
             lbl_titre.TextAlign = ContentAlignment.MiddleCenter;
@@ -65,22 +66,25 @@
             // pictureBox
             // 
             pictureBox.Image = (Image)resources.GetObject("pictureBox.Image");
-            pictureBox.Location = new Point(12, 118);
+            pictureBox.Location = new Point(14, 157);
+            pictureBox.Margin = new Padding(3, 4, 3, 4);
             pictureBox.Name = "pictureBox";
-            pictureBox.Size = new Size(776, 488);
+            pictureBox.Size = new Size(887, 651);
             pictureBox.TabIndex = 41;
             pictureBox.TabStop = false;
             // 
             // Carte
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(212, 77, 32);
-            ClientSize = new Size(800, 618);
+            ClientSize = new Size(914, 824);
             Controls.Add(pictureBox);
             Controls.Add(bt_retour);
             Controls.Add(lbl_titre);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Carte";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Carte";
             ((System.ComponentModel.ISupportInitialize)pictureBox).EndInit();
             ResumeLayout(false);

@@ -49,16 +49,18 @@
             // 
             // txt_type
             // 
-            txt_type.Location = new Point(243, 169);
+            txt_type.Location = new Point(278, 225);
+            txt_type.Margin = new Padding(3, 4, 3, 4);
             txt_type.Name = "txt_type";
-            txt_type.Size = new Size(176, 23);
+            txt_type.Size = new Size(201, 27);
             txt_type.TabIndex = 37;
             // 
             // txt_ingredient
             // 
-            txt_ingredient.Location = new Point(10, 169);
+            txt_ingredient.Location = new Point(11, 225);
+            txt_ingredient.Margin = new Padding(3, 4, 3, 4);
             txt_ingredient.Name = "txt_ingredient";
-            txt_ingredient.Size = new Size(176, 23);
+            txt_ingredient.Size = new Size(201, 27);
             txt_ingredient.TabIndex = 36;
             // 
             // lbl_type
@@ -66,9 +68,9 @@
             lbl_type.AutoSize = true;
             lbl_type.BackColor = Color.FromArgb(250, 191, 80);
             lbl_type.Font = new Font("Segoe UI", 12F);
-            lbl_type.Location = new Point(243, 127);
+            lbl_type.Location = new Point(278, 169);
             lbl_type.Name = "lbl_type";
-            lbl_type.Size = new Size(93, 21);
+            lbl_type.Size = new Size(119, 28);
             lbl_type.TabIndex = 35;
             lbl_type.Text = "Type de plat";
             // 
@@ -77,9 +79,9 @@
             lbl_portion.AutoSize = true;
             lbl_portion.BackColor = Color.FromArgb(250, 191, 80);
             lbl_portion.Font = new Font("Segoe UI", 12F);
-            lbl_portion.Location = new Point(243, 226);
+            lbl_portion.Location = new Point(278, 301);
             lbl_portion.Name = "lbl_portion";
-            lbl_portion.Size = new Size(151, 21);
+            lbl_portion.Size = new Size(191, 28);
             lbl_portion.TabIndex = 34;
             lbl_portion.Text = "Nombre de portions";
             // 
@@ -88,9 +90,9 @@
             lbl_ingredient.AutoSize = true;
             lbl_ingredient.BackColor = Color.FromArgb(250, 191, 80);
             lbl_ingredient.Font = new Font("Segoe UI", 12F);
-            lbl_ingredient.Location = new Point(12, 127);
+            lbl_ingredient.Location = new Point(14, 169);
             lbl_ingredient.Name = "lbl_ingredient";
-            lbl_ingredient.Size = new Size(88, 21);
+            lbl_ingredient.Size = new Size(110, 28);
             lbl_ingredient.TabIndex = 32;
             lbl_ingredient.Text = "Ingrédients";
             // 
@@ -100,9 +102,9 @@
             lbl_titre.AutoSize = true;
             lbl_titre.BackColor = Color.FromArgb(250, 191, 80);
             lbl_titre.Font = new Font("Segoe UI", 36F);
-            lbl_titre.Location = new Point(12, 9);
+            lbl_titre.Location = new Point(14, 12);
             lbl_titre.Name = "lbl_titre";
-            lbl_titre.Size = new Size(435, 65);
+            lbl_titre.Size = new Size(543, 81);
             lbl_titre.TabIndex = 31;
             lbl_titre.Text = "Ajouter une recette";
             lbl_titre.TextAlign = ContentAlignment.MiddleCenter;
@@ -111,9 +113,10 @@
             // 
             bt_retour.BackColor = Color.FromArgb(250, 191, 80);
             bt_retour.Font = new Font("Segoe UI", 14F);
-            bt_retour.Location = new Point(614, 83);
+            bt_retour.Location = new Point(702, 111);
+            bt_retour.Margin = new Padding(3, 4, 3, 4);
             bt_retour.Name = "bt_retour";
-            bt_retour.Size = new Size(174, 54);
+            bt_retour.Size = new Size(199, 72);
             bt_retour.TabIndex = 43;
             bt_retour.Text = "Retour";
             bt_retour.UseVisualStyleBackColor = false;
@@ -125,9 +128,10 @@
             // 
             pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox1.Location = new Point(610, 177);
+            pictureBox1.Location = new Point(697, 236);
+            pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(182, 169);
+            pictureBox1.Size = new Size(208, 225);
             pictureBox1.TabIndex = 42;
             pictureBox1.TabStop = false;
             // 
@@ -135,9 +139,10 @@
             // 
             bt_quitter.BackColor = Color.FromArgb(250, 191, 80);
             bt_quitter.Font = new Font("Segoe UI", 14F);
-            bt_quitter.Location = new Point(614, 9);
+            bt_quitter.Location = new Point(702, 12);
+            bt_quitter.Margin = new Padding(3, 4, 3, 4);
             bt_quitter.Name = "bt_quitter";
-            bt_quitter.Size = new Size(174, 54);
+            bt_quitter.Size = new Size(199, 72);
             bt_quitter.TabIndex = 41;
             bt_quitter.Text = "Quitter";
             bt_quitter.UseVisualStyleBackColor = false;
@@ -149,9 +154,10 @@
             // 
             bt_plat.BackColor = Color.FromArgb(250, 191, 80);
             bt_plat.Font = new Font("Segoe UI", 14F);
-            bt_plat.Location = new Point(614, 381);
+            bt_plat.Location = new Point(702, 508);
+            bt_plat.Margin = new Padding(3, 4, 3, 4);
             bt_plat.Name = "bt_plat";
-            bt_plat.Size = new Size(174, 54);
+            bt_plat.Size = new Size(199, 72);
             bt_plat.TabIndex = 40;
             bt_plat.Text = "Ajouter";
             bt_plat.UseVisualStyleBackColor = false;
@@ -161,9 +167,10 @@
             // 
             // txt_nation
             // 
-            txt_nation.Location = new Point(10, 266);
+            txt_nation.Location = new Point(11, 355);
+            txt_nation.Margin = new Padding(3, 4, 3, 4);
             txt_nation.Name = "txt_nation";
-            txt_nation.Size = new Size(176, 23);
+            txt_nation.Size = new Size(201, 27);
             txt_nation.TabIndex = 45;
             // 
             // lbl_nationalité
@@ -171,17 +178,18 @@
             lbl_nationalité.AutoSize = true;
             lbl_nationalité.BackColor = Color.FromArgb(250, 191, 80);
             lbl_nationalité.Font = new Font("Segoe UI", 12F);
-            lbl_nationalité.Location = new Point(10, 226);
+            lbl_nationalité.Location = new Point(11, 301);
             lbl_nationalité.Name = "lbl_nationalité";
-            lbl_nationalité.Size = new Size(86, 21);
+            lbl_nationalité.Size = new Size(109, 28);
             lbl_nationalité.TabIndex = 44;
             lbl_nationalité.Text = "Nationalité";
             // 
             // txt_portion
             // 
-            txt_portion.Location = new Point(243, 266);
+            txt_portion.Location = new Point(278, 355);
+            txt_portion.Margin = new Padding(3, 4, 3, 4);
             txt_portion.Name = "txt_portion";
-            txt_portion.Size = new Size(176, 23);
+            txt_portion.Size = new Size(201, 27);
             txt_portion.TabIndex = 46;
             // 
             // lbl_regime
@@ -189,25 +197,26 @@
             lbl_regime.AutoSize = true;
             lbl_regime.BackColor = Color.FromArgb(250, 191, 80);
             lbl_regime.Font = new Font("Segoe UI", 12F);
-            lbl_regime.Location = new Point(10, 325);
+            lbl_regime.Location = new Point(11, 433);
             lbl_regime.Name = "lbl_regime";
-            lbl_regime.Size = new Size(145, 21);
+            lbl_regime.Size = new Size(179, 28);
             lbl_regime.TabIndex = 47;
             lbl_regime.Text = "Régime alimentaire";
             // 
             // txt_regime
             // 
-            txt_regime.Location = new Point(10, 365);
+            txt_regime.Location = new Point(11, 487);
+            txt_regime.Margin = new Padding(3, 4, 3, 4);
             txt_regime.Name = "txt_regime";
-            txt_regime.Size = new Size(176, 23);
+            txt_regime.Size = new Size(201, 27);
             txt_regime.TabIndex = 48;
             // 
             // AjoutRecette
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(212, 77, 32);
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(914, 600);
             Controls.Add(txt_regime);
             Controls.Add(lbl_regime);
             Controls.Add(txt_portion);
@@ -223,7 +232,9 @@
             Controls.Add(lbl_portion);
             Controls.Add(lbl_ingredient);
             Controls.Add(lbl_titre);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "AjoutRecette";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "AjoutRecette";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);

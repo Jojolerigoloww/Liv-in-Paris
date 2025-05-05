@@ -132,8 +132,8 @@ namespace PSI_Interface
                 adapter.Fill(dt);
 
                 comboBox.DataSource = dt;
-                comboBox.DisplayMember = "Nom_User";         // Ce que l'utilisateur voit
-                comboBox.ValueMember = "ID_Cuisinier";  // Ce que tu récupères en interne
+                comboBox.DisplayMember = "Nom_User";
+                comboBox.ValueMember = "ID_Cuisinier";
             }
         }
     }

@@ -54,25 +54,27 @@
             lbl_titre.AutoSize = true;
             lbl_titre.BackColor = Color.FromArgb(250, 191, 80);
             lbl_titre.Font = new Font("Segoe UI", 36F);
-            lbl_titre.Location = new Point(12, 9);
+            lbl_titre.Location = new Point(14, 12);
             lbl_titre.Name = "lbl_titre";
-            lbl_titre.Size = new Size(344, 65);
+            lbl_titre.Size = new Size(431, 81);
             lbl_titre.TabIndex = 2;
             lbl_titre.Text = "Ajouter un plat";
             lbl_titre.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // txt_prix
             // 
-            txt_prix.Location = new Point(243, 169);
+            txt_prix.Location = new Point(278, 225);
+            txt_prix.Margin = new Padding(3, 4, 3, 4);
             txt_prix.Name = "txt_prix";
-            txt_prix.Size = new Size(176, 23);
+            txt_prix.Size = new Size(201, 27);
             txt_prix.TabIndex = 28;
             // 
             // txt_nom
             // 
-            txt_nom.Location = new Point(10, 169);
+            txt_nom.Location = new Point(11, 225);
+            txt_nom.Margin = new Padding(3, 4, 3, 4);
             txt_nom.Name = "txt_nom";
-            txt_nom.Size = new Size(176, 23);
+            txt_nom.Size = new Size(201, 27);
             txt_nom.TabIndex = 25;
             // 
             // lbl_prix
@@ -80,9 +82,9 @@
             lbl_prix.AutoSize = true;
             lbl_prix.BackColor = Color.FromArgb(250, 191, 80);
             lbl_prix.Font = new Font("Segoe UI", 12F);
-            lbl_prix.Location = new Point(243, 127);
+            lbl_prix.Location = new Point(278, 169);
             lbl_prix.Name = "lbl_prix";
-            lbl_prix.Size = new Size(36, 21);
+            lbl_prix.Size = new Size(44, 28);
             lbl_prix.TabIndex = 22;
             lbl_prix.Text = "Prix";
             // 
@@ -91,9 +93,9 @@
             lbl_date_peremption.AutoSize = true;
             lbl_date_peremption.BackColor = Color.FromArgb(250, 191, 80);
             lbl_date_peremption.Font = new Font("Segoe UI", 12F);
-            lbl_date_peremption.Location = new Point(243, 226);
+            lbl_date_peremption.Location = new Point(278, 301);
             lbl_date_peremption.Name = "lbl_date_peremption";
-            lbl_date_peremption.Size = new Size(148, 21);
+            lbl_date_peremption.Size = new Size(188, 28);
             lbl_date_peremption.TabIndex = 21;
             lbl_date_peremption.Text = "Date de péremption";
             // 
@@ -102,9 +104,9 @@
             lbl_date_creation.AutoSize = true;
             lbl_date_creation.BackColor = Color.FromArgb(250, 191, 80);
             lbl_date_creation.Font = new Font("Segoe UI", 12F);
-            lbl_date_creation.Location = new Point(12, 226);
+            lbl_date_creation.Location = new Point(14, 301);
             lbl_date_creation.Name = "lbl_date_creation";
-            lbl_date_creation.Size = new Size(123, 21);
+            lbl_date_creation.Size = new Size(156, 28);
             lbl_date_creation.TabIndex = 20;
             lbl_date_creation.Text = "Date de création";
             // 
@@ -113,24 +115,26 @@
             lbl_nom.AutoSize = true;
             lbl_nom.BackColor = Color.FromArgb(250, 191, 80);
             lbl_nom.Font = new Font("Segoe UI", 12F);
-            lbl_nom.Location = new Point(12, 127);
+            lbl_nom.Location = new Point(14, 169);
             lbl_nom.Name = "lbl_nom";
-            lbl_nom.Size = new Size(45, 21);
+            lbl_nom.Size = new Size(56, 28);
             lbl_nom.TabIndex = 19;
             lbl_nom.Text = "Nom";
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(12, 266);
+            dateTimePicker1.Location = new Point(14, 355);
+            dateTimePicker1.Margin = new Padding(3, 4, 3, 4);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(176, 23);
+            dateTimePicker1.Size = new Size(201, 27);
             dateTimePicker1.TabIndex = 29;
             // 
             // dateTimePicker2
             // 
-            dateTimePicker2.Location = new Point(243, 266);
+            dateTimePicker2.Location = new Point(278, 355);
+            dateTimePicker2.Margin = new Padding(3, 4, 3, 4);
             dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(176, 23);
+            dateTimePicker2.Size = new Size(201, 27);
             dateTimePicker2.TabIndex = 30;
             // 
             // lbl_recette
@@ -138,9 +142,9 @@
             lbl_recette.AutoSize = true;
             lbl_recette.BackColor = Color.FromArgb(250, 191, 80);
             lbl_recette.Font = new Font("Segoe UI", 12F);
-            lbl_recette.Location = new Point(10, 328);
+            lbl_recette.Location = new Point(11, 437);
             lbl_recette.Name = "lbl_recette";
-            lbl_recette.Size = new Size(381, 21);
+            lbl_recette.Size = new Size(480, 28);
             lbl_recette.TabIndex = 31;
             lbl_recette.Text = "Voulez-vous rajouter votre plat à la liste des recettes ?";
             // 
@@ -148,9 +152,10 @@
             // 
             radioButton1.AutoSize = true;
             radioButton1.BackColor = Color.White;
-            radioButton1.Location = new Point(10, 369);
+            radioButton1.Location = new Point(11, 492);
+            radioButton1.Margin = new Padding(3, 4, 3, 4);
             radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(44, 19);
+            radioButton1.Size = new Size(53, 24);
             radioButton1.TabIndex = 32;
             radioButton1.TabStop = true;
             radioButton1.Text = "Oui";
@@ -160,9 +165,10 @@
             // 
             radioButton2.AutoSize = true;
             radioButton2.BackColor = Color.White;
-            radioButton2.Location = new Point(243, 369);
+            radioButton2.Location = new Point(278, 492);
+            radioButton2.Margin = new Padding(3, 4, 3, 4);
             radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(48, 19);
+            radioButton2.Size = new Size(58, 24);
             radioButton2.TabIndex = 33;
             radioButton2.TabStop = true;
             radioButton2.Text = "Non";
@@ -172,9 +178,10 @@
             // 
             bt_plat.BackColor = Color.FromArgb(250, 191, 80);
             bt_plat.Font = new Font("Segoe UI", 14F);
-            bt_plat.Location = new Point(614, 384);
+            bt_plat.Location = new Point(702, 512);
+            bt_plat.Margin = new Padding(3, 4, 3, 4);
             bt_plat.Name = "bt_plat";
-            bt_plat.Size = new Size(174, 54);
+            bt_plat.Size = new Size(199, 72);
             bt_plat.TabIndex = 34;
             bt_plat.Text = "Ajouter";
             bt_plat.UseVisualStyleBackColor = false;
@@ -186,9 +193,10 @@
             // 
             bt_retour.BackColor = Color.FromArgb(250, 191, 80);
             bt_retour.Font = new Font("Segoe UI", 14F);
-            bt_retour.Location = new Point(614, 86);
+            bt_retour.Location = new Point(702, 115);
+            bt_retour.Margin = new Padding(3, 4, 3, 4);
             bt_retour.Name = "bt_retour";
-            bt_retour.Size = new Size(174, 54);
+            bt_retour.Size = new Size(199, 72);
             bt_retour.TabIndex = 37;
             bt_retour.Text = "Retour";
             bt_retour.UseVisualStyleBackColor = false;
@@ -200,9 +208,10 @@
             // 
             pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox1.Location = new Point(610, 180);
+            pictureBox1.Location = new Point(697, 240);
+            pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(182, 169);
+            pictureBox1.Size = new Size(208, 225);
             pictureBox1.TabIndex = 36;
             pictureBox1.TabStop = false;
             // 
@@ -210,9 +219,10 @@
             // 
             bt_quitter.BackColor = Color.FromArgb(250, 191, 80);
             bt_quitter.Font = new Font("Segoe UI", 14F);
-            bt_quitter.Location = new Point(614, 12);
+            bt_quitter.Location = new Point(702, 16);
+            bt_quitter.Margin = new Padding(3, 4, 3, 4);
             bt_quitter.Name = "bt_quitter";
-            bt_quitter.Size = new Size(174, 54);
+            bt_quitter.Size = new Size(199, 72);
             bt_quitter.TabIndex = 35;
             bt_quitter.Text = "Quitter";
             bt_quitter.UseVisualStyleBackColor = false;
@@ -222,10 +232,10 @@
             // 
             // AjoutPlat
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(212, 77, 32);
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(914, 600);
             Controls.Add(bt_retour);
             Controls.Add(pictureBox1);
             Controls.Add(bt_quitter);
@@ -242,7 +252,9 @@
             Controls.Add(lbl_date_creation);
             Controls.Add(lbl_nom);
             Controls.Add(lbl_titre);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "AjoutPlat";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "AjoutPlat";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);

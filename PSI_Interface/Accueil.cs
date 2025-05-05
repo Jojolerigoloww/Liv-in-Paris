@@ -62,7 +62,7 @@ namespace PSI_Interface
 
                                     switch (comboBox_statut.SelectedIndex)
                                     {
-                                        case 0: // Client
+                                        case 0: ///Client
                                             using (MySqlCommand checkCmd = new MySqlCommand("SELECT ID_Client FROM Client WHERE ID_User = @ID", connection))
                                             {
                                                 checkCmd.Parameters.AddWithValue("@ID", id_User);
@@ -70,7 +70,6 @@ namespace PSI_Interface
 
                                                 if (result == null)
                                                 {
-                                                    // Le client n'existe pas encore ? demander les préférences
                                                     string preferences = Microsoft.VisualBasic.Interaction.InputBox(
                                                         "Entrez vos préférences (régime, plats, allergies, etc.) :",
                                                         "Préférences Client",
@@ -98,7 +97,7 @@ namespace PSI_Interface
                                             Form_Utilisateur.Show();
                                             break;
 
-                                        case 1: // Cuisinier
+                                        case 1: /// Cuisinier
                                             using (MySqlCommand checkCmd = new MySqlCommand("SELECT ID_Cuisinier FROM Cuisinier WHERE ID_User = @ID", connection))
                                             {
                                                 checkCmd.Parameters.AddWithValue("@ID", id_User);
@@ -120,7 +119,7 @@ namespace PSI_Interface
                                             Form_Cuisinier.Show();
                                             break;
 
-                                        case 2: // Admin
+                                        case 2: /// Admin
                                             AppAdmin Form_Admin = new AppAdmin(nom, prenom);
                                             Form_Admin.Show();
                                             break;

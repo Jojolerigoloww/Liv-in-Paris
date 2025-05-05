@@ -43,9 +43,9 @@
             lbl_titre.AutoSize = true;
             lbl_titre.BackColor = Color.FromArgb(250, 191, 80);
             lbl_titre.Font = new Font("Segoe UI", 36F);
-            lbl_titre.Location = new Point(10, 7);
+            lbl_titre.Location = new Point(11, 9);
             lbl_titre.Name = "lbl_titre";
-            lbl_titre.Size = new Size(247, 65);
+            lbl_titre.Size = new Size(308, 81);
             lbl_titre.TabIndex = 14;
             lbl_titre.Text = "Bienvenue";
             lbl_titre.TextAlign = ContentAlignment.MiddleCenter;
@@ -54,9 +54,10 @@
             // 
             bt_quitter.BackColor = Color.FromArgb(250, 191, 80);
             bt_quitter.Font = new Font("Segoe UI", 14F);
-            bt_quitter.Location = new Point(554, 302);
+            bt_quitter.Location = new Point(633, 403);
+            bt_quitter.Margin = new Padding(3, 4, 3, 4);
             bt_quitter.Name = "bt_quitter";
-            bt_quitter.Size = new Size(174, 54);
+            bt_quitter.Size = new Size(199, 72);
             bt_quitter.TabIndex = 15;
             bt_quitter.Text = "Quitter";
             bt_quitter.UseVisualStyleBackColor = false;
@@ -68,9 +69,10 @@
             // 
             bt_plat.BackColor = Color.FromArgb(250, 191, 80);
             bt_plat.Font = new Font("Segoe UI", 14F);
-            bt_plat.Location = new Point(552, 220);
+            bt_plat.Location = new Point(631, 293);
+            bt_plat.Margin = new Padding(3, 4, 3, 4);
             bt_plat.Name = "bt_plat";
-            bt_plat.Size = new Size(174, 54);
+            bt_plat.Size = new Size(199, 72);
             bt_plat.TabIndex = 16;
             bt_plat.Text = "Nouveau Plat";
             bt_plat.UseVisualStyleBackColor = false;
@@ -82,9 +84,10 @@
             // 
             bt_recette.BackColor = Color.FromArgb(250, 191, 80);
             bt_recette.Font = new Font("Segoe UI", 14F);
-            bt_recette.Location = new Point(552, 138);
+            bt_recette.Location = new Point(631, 184);
+            bt_recette.Margin = new Padding(3, 4, 3, 4);
             bt_recette.Name = "bt_recette";
-            bt_recette.Size = new Size(174, 54);
+            bt_recette.Size = new Size(199, 72);
             bt_recette.TabIndex = 17;
             bt_recette.Text = "Nouvelle Recette";
             bt_recette.UseVisualStyleBackColor = false;
@@ -96,25 +99,26 @@
             // 
             pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox1.Location = new Point(12, 112);
+            pictureBox1.Location = new Point(14, 149);
+            pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(245, 241);
+            pictureBox1.Size = new Size(280, 321);
             pictureBox1.TabIndex = 21;
             pictureBox1.TabStop = false;
             // 
             // AppCuisinier
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(212, 77, 32);
-            ClientSize = new Size(738, 365);
+            ClientSize = new Size(843, 487);
             Controls.Add(pictureBox1);
             Controls.Add(bt_recette);
             Controls.Add(bt_plat);
             Controls.Add(bt_quitter);
             Controls.Add(lbl_titre);
-            Margin = new Padding(3, 2, 3, 2);
             Name = "AppCuisinier";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "AppCuisinier";
             Load += AppCuisinier_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

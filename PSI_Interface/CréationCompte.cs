@@ -68,7 +68,6 @@ namespace PSI_Interface
                             {
                                 MessageBox.Show("Utilisateur ajouté avec succès !", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                                // Effacer les champs après insertion
                                 Id_User = "";
                                 Nom_User = "";
                                 Prenom_User = "";

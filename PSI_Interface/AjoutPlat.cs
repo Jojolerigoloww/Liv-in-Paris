@@ -120,7 +120,6 @@ namespace PSI_Interface
                             {
                                 MessageBox.Show("Plat ajouté avec succès !", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                                // Effacer les champs après insertion
                                 Id_Plat = "";
                                 Nom_Plat = "";
                                 Prix = "";

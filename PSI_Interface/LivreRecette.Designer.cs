@@ -40,9 +40,9 @@
             lbl_titre.AutoSize = true;
             lbl_titre.BackColor = Color.FromArgb(250, 191, 80);
             lbl_titre.Font = new Font("Segoe UI", 36F);
-            lbl_titre.Location = new Point(12, 9);
+            lbl_titre.Location = new Point(14, 12);
             lbl_titre.Name = "lbl_titre";
-            lbl_titre.Size = new Size(404, 65);
+            lbl_titre.Size = new Size(502, 81);
             lbl_titre.TabIndex = 15;
             lbl_titre.Text = "Livre des Recettes";
             lbl_titre.TextAlign = ContentAlignment.MiddleCenter;
@@ -50,18 +50,21 @@
             // dataGridView
             // 
             dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView.Location = new Point(12, 94);
+            dataGridView.Location = new Point(14, 125);
+            dataGridView.Margin = new Padding(3, 4, 3, 4);
             dataGridView.Name = "dataGridView";
-            dataGridView.Size = new Size(776, 344);
+            dataGridView.RowHeadersWidth = 51;
+            dataGridView.Size = new Size(887, 459);
             dataGridView.TabIndex = 16;
             // 
             // bt_retour
             // 
             bt_retour.BackColor = Color.FromArgb(250, 191, 80);
             bt_retour.Font = new Font("Segoe UI", 14F);
-            bt_retour.Location = new Point(614, 9);
+            bt_retour.Location = new Point(702, 12);
+            bt_retour.Margin = new Padding(3, 4, 3, 4);
             bt_retour.Name = "bt_retour";
-            bt_retour.Size = new Size(174, 54);
+            bt_retour.Size = new Size(199, 72);
             bt_retour.TabIndex = 38;
             bt_retour.Text = "Retour";
             bt_retour.UseVisualStyleBackColor = false;
@@ -71,14 +74,16 @@
             // 
             // LivreRecette
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(212, 77, 32);
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(914, 600);
             Controls.Add(bt_retour);
             Controls.Add(dataGridView);
             Controls.Add(lbl_titre);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "LivreRecette";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "LivreRecette";
             ((System.ComponentModel.ISupportInitialize)dataGridView).EndInit();
             ResumeLayout(false);

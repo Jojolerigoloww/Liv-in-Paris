@@ -63,23 +63,18 @@ namespace PSI_Interface
 
         private void ChargerDonnees(string selection)
         {
-            // Obtenir la requête SQL appropriée selon la sélection
             string requeteSQL = ObtenirRequeteSQL(selection);
 
             try
             {
                 {
-                    // Créer un adaptateur de données avec la requête
                     using (MySqlDataAdapter adapter = new MySqlDataAdapter(requeteSQL, codeSql))
                     {
-                        // Créer et remplir un DataTable
                         DataTable dataTable = new DataTable();
                         adapter.Fill(dataTable);
 
-                        // Lier le DataTable au DataGridView
                         dataGridView.DataSource = dataTable;
 
-                        // Optionnel: Ajuster l'apparence du DataGridView
                         ConfigurerDataGridView();
                     }
                 }
@@ -93,27 +88,21 @@ namespace PSI_Interface
 
         private string ObtenirRequeteSQL(string selection)
         {
-            // *** INSÉREZ VOS REQUÊTES SQL ICI ***
             switch (selection)
             {
                 case "Utilisateurs":
-                    // Requête pour les utilisateurs
                     return @"SELECT * FROM Utilisateur";
 
                 case "Cuisiniers":
-                    // Requête pour les cuisiniers
                     return @"SELECT * FROM Cuisinier";
 
                 case "Plats":
-                    // Requête pour les plats
                     return @"SELECT * FROM Plat";
 
                 case "Clients":
-                    // Requête pour les notes
                     return @"SELECT * FROM Client";
 
                 case "Notes Moyennes":
-                    // Requête pour les commandes
                     return @"SELECT Utilisateur.Nom_User AS Nom_Cuisinier,
                             Utilisateur.Prenom_User AS Prenom_Cuisinier,
                             COALESCE(AVG(Note.Note), 0) AS Note_Moyenne
@@ -124,7 +113,6 @@ namespace PSI_Interface
                             ORDER BY Note_Moyenne DESC;";
 
                 default:
-                    // Requête par défaut au cas où
                     return @"SELECT *
                             FROM utilisateur
                             ORDER BY Nom_User,Prenom_User";
@@ -133,14 +121,12 @@ namespace PSI_Interface
 
         private void ConfigurerDataGridView()
         {
-            // Personnaliser l'apparence et le comportement du DataGridView
-            dataGridView.AllowUserToAddRows = false;       // Empêcher l'ajout de lignes par l'utilisateur
-            dataGridView.AllowUserToDeleteRows = false;    // Empêcher la suppression de lignes
-            dataGridView.ReadOnly = true;                  // Rendre le DataGridView en lecture seule
-            dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill; // Ajuster les colonnes
-            dataGridView.AlternatingRowsDefaultCellStyle.BackColor = System.Drawing.Color.AliceBlue; // Alternance des couleurs
+            dataGridView.AllowUserToAddRows = false;
+            dataGridView.AllowUserToDeleteRows = false;
+            dataGridView.ReadOnly = true;
+            dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView.AlternatingRowsDefaultCellStyle.BackColor = System.Drawing.Color.AliceBlue;
 
-            // Vous pouvez ajouter d'autres personnalisations ici selon vos besoins
         }
 
         private void bt_exporter_Click(object sender, EventArgs e)
@@ -294,17 +280,14 @@ namespace PSI_Interface
                 {
                     string cheminComplet = openFileDialog.FileName;
 
-                    // 1. Désérialisation du fichier XML
                     XmlSerializer serializer = new XmlSerializer(typeof(ListeUtilisateurs));
                     ListeUtilisateurs listeImportee;
 
-                    // Utilisation de StreamReader pour lire le fichier XML
                     using (StreamReader reader = new StreamReader(cheminComplet))
                     {
                         listeImportee = (ListeUtilisateurs)serializer.Deserialize(reader);
                     }
 
-                    // 2. Connexion à la BDD
                     string connectionString = "SERVER=localhost;PORT=3306;DATABASE=livin;UID=root;PASSWORD=Bastien2109@";
 
                     using (MySqlConnection conn = new MySqlConnection(connectionString))
@@ -313,7 +296,6 @@ namespace PSI_Interface
 
                         foreach (var utilisateur in listeImportee.Utilisateurs)
                         {
-                            // Vérifie si l'utilisateur existe déjà par email
                             MessageBox.Show(utilisateur.ID_User);
                             string checkQuery = "SELECT COUNT(*) FROM Utilisateur WHERE Email = @Email";
                             using (MySqlCommand checkCmd = new MySqlCommand(checkQuery, conn))
@@ -321,7 +303,7 @@ namespace PSI_Interface
                                 checkCmd.Parameters.AddWithValue("@Email", utilisateur.Email);
                                 int count = Convert.ToInt32(checkCmd.ExecuteScalar());
 
-                                if (count == 0) // S’il n’existe pas
+                                if (count == 0)
                                 {
                                     string insertQuery = @"INSERT INTO Utilisateur (ID_User, Nom_User, Prenom_User, Email, Mot_De_Passe, Adresse, Metro) 
                                                    VALUES (@Id, @Nom, @Prenom, @Email, @Mdp, @Adresse, @Metro)";
@@ -330,7 +312,7 @@ namespace PSI_Interface
                                     {
                                         if (string.IsNullOrEmpty(utilisateur.ID_User))
                                         {
-                                            utilisateur.ID_User = Guid.NewGuid().ToString("N"); // 32 char sans tirets
+                                            utilisateur.ID_User = Guid.NewGuid().ToString("N");
                                         }
                                         insertCmd.Parameters.AddWithValue("@Id", utilisateur.ID_User);
                                         insertCmd.Parameters.AddWithValue("@Nom", utilisateur.Nom);

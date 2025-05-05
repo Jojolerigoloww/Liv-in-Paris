@@ -36,9 +36,10 @@
             // 
             // pictureBox
             // 
-            pictureBox.Location = new Point(12, 122);
+            pictureBox.Location = new Point(14, 163);
+            pictureBox.Margin = new Padding(3, 4, 3, 4);
             pictureBox.Name = "pictureBox";
-            pictureBox.Size = new Size(1243, 488);
+            pictureBox.Size = new Size(1421, 651);
             pictureBox.TabIndex = 44;
             pictureBox.TabStop = false;
             // 
@@ -46,9 +47,10 @@
             // 
             bt_retour.BackColor = Color.FromArgb(250, 191, 80);
             bt_retour.Font = new Font("Segoe UI", 14F);
-            bt_retour.Location = new Point(1085, 12);
+            bt_retour.Location = new Point(1240, 16);
+            bt_retour.Margin = new Padding(3, 4, 3, 4);
             bt_retour.Name = "bt_retour";
-            bt_retour.Size = new Size(174, 54);
+            bt_retour.Size = new Size(199, 72);
             bt_retour.TabIndex = 43;
             bt_retour.Text = "Retour";
             bt_retour.UseVisualStyleBackColor = false;
@@ -62,23 +64,25 @@
             lbl_titre.AutoSize = true;
             lbl_titre.BackColor = Color.FromArgb(250, 191, 80);
             lbl_titre.Font = new Font("Segoe UI", 36F);
-            lbl_titre.Location = new Point(12, 13);
+            lbl_titre.Location = new Point(14, 17);
             lbl_titre.Name = "lbl_titre";
-            lbl_titre.Size = new Size(479, 65);
+            lbl_titre.Size = new Size(598, 81);
             lbl_titre.TabIndex = 42;
             lbl_titre.Text = "Trajet Cuisinier-Client";
             lbl_titre.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // Trajet
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(212, 77, 32);
-            ClientSize = new Size(1271, 622);
+            ClientSize = new Size(1453, 829);
             Controls.Add(pictureBox);
             Controls.Add(bt_retour);
             Controls.Add(lbl_titre);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Trajet";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Trajet";
             Load += Trajet_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox).EndInit();

@@ -155,6 +155,7 @@
             Controls.Add(bt_quitter);
             Controls.Add(lbl_titre_2);
             Name = "AppAdmin";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "AppAdmin";
             Load += AppAdmin_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView).EndInit();
