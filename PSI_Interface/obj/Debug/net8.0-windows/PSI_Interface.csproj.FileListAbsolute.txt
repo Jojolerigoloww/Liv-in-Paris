@@ -68,3 +68,4 @@ C:\Users\basti\Documents\GitHub\Liv-in-Paris\PSI_Interface\bin\Debug\net8.0-wind
 C:\Users\basti\Documents\GitHub\Liv-in-Paris\PSI_Interface\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
 C:\Users\basti\Documents\GitHub\Liv-in-Paris\PSI_Interface\bin\Debug\net8.0-windows\PSI_Rendu1_2.0.dll
 C:\Users\basti\Documents\GitHub\Liv-in-Paris\PSI_Interface\bin\Debug\net8.0-windows\PSI_Rendu1_2.0.pdb
+C:\Users\basti\Documents\GitHub\Liv-in-Paris\PSI_Interface\obj\Debug\net8.0-windows\PSI_Interface.Note.resources

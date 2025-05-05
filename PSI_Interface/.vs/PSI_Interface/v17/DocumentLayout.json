@@ -3,20 +3,52 @@
   "WorkspaceRootPath": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Interface\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E740D2B1-970F-46BE-85E0-A2ACB101DA7B}|PSI_Interface.csproj|c:\\users\\basti\\documents\\github\\liv-in-paris\\psi_interface\\appcuisinier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E740D2B1-970F-46BE-85E0-A2ACB101DA7B}|PSI_Interface.csproj|solutionrelative:appcuisinier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E740D2B1-970F-46BE-85E0-A2ACB101DA7B}|PSI_Interface.csproj|c:\\users\\basti\\documents\\github\\liv-in-paris\\psi_interface\\note.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E740D2B1-970F-46BE-85E0-A2ACB101DA7B}|PSI_Interface.csproj|solutionrelative:note.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E740D2B1-970F-46BE-85E0-A2ACB101DA7B}|PSI_Interface.csproj|c:\\users\\basti\\documents\\github\\liv-in-paris\\psi_interface\\appadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E740D2B1-970F-46BE-85E0-A2ACB101DA7B}|PSI_Interface.csproj|solutionrelative:appadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{E740D2B1-970F-46BE-85E0-A2ACB101DA7B}|PSI_Interface.csproj|c:\\users\\basti\\documents\\github\\liv-in-paris\\psi_interface\\note.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E740D2B1-970F-46BE-85E0-A2ACB101DA7B}|PSI_Interface.csproj|solutionrelative:note.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E740D2B1-970F-46BE-85E0-A2ACB101DA7B}|PSI_Interface.csproj|c:\\users\\basti\\documents\\github\\liv-in-paris\\psi_interface\\appadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E740D2B1-970F-46BE-85E0-A2ACB101DA7B}|PSI_Interface.csproj|solutionrelative:appadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{E740D2B1-970F-46BE-85E0-A2ACB101DA7B}|PSI_Interface.csproj|c:\\users\\basti\\documents\\github\\liv-in-paris\\psi_interface\\apputilisateur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E740D2B1-970F-46BE-85E0-A2ACB101DA7B}|PSI_Interface.csproj|solutionrelative:apputilisateur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E740D2B1-970F-46BE-85E0-A2ACB101DA7B}|PSI_Interface.csproj|C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Interface\\apputilisateur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E740D2B1-970F-46BE-85E0-A2ACB101DA7B}|PSI_Interface.csproj|solutionrelative:apputilisateur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E740D2B1-970F-46BE-85E0-A2ACB101DA7B}|PSI_Interface.csproj|C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Interface\\cr\u00E9ationcompte.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E740D2B1-970F-46BE-85E0-A2ACB101DA7B}|PSI_Interface.csproj|solutionrelative:cr\u00E9ationcompte.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E740D2B1-970F-46BE-85E0-A2ACB101DA7B}|PSI_Interface.csproj|c:\\users\\basti\\documents\\github\\liv-in-paris\\psi_interface\\appadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E740D2B1-970F-46BE-85E0-A2ACB101DA7B}|PSI_Interface.csproj|solutionrelative:appadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E740D2B1-970F-46BE-85E0-A2ACB101DA7B}|PSI_Interface.csproj|c:\\users\\basti\\documents\\github\\liv-in-paris\\psi_interface\\utilisateur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E740D2B1-970F-46BE-85E0-A2ACB101DA7B}|PSI_Interface.csproj|solutionrelative:utilisateur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E740D2B1-970F-46BE-85E0-A2ACB101DA7B}|PSI_Interface.csproj|c:\\users\\basti\\documents\\github\\liv-in-paris\\psi_interface\\listeutilisateurs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E740D2B1-970F-46BE-85E0-A2ACB101DA7B}|PSI_Interface.csproj|solutionrelative:listeutilisateurs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E740D2B1-970F-46BE-85E0-A2ACB101DA7B}|PSI_Interface.csproj|c:\\users\\basti\\documents\\github\\liv-in-paris\\psi_interface\\accueil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E740D2B1-970F-46BE-85E0-A2ACB101DA7B}|PSI_Interface.csproj|solutionrelative:accueil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E740D2B1-970F-46BE-85E0-A2ACB101DA7B}|PSI_Interface.csproj|C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Interface\\accueil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E740D2B1-970F-46BE-85E0-A2ACB101DA7B}|PSI_Interface.csproj|solutionrelative:accueil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E740D2B1-970F-46BE-85E0-A2ACB101DA7B}|PSI_Interface.csproj|c:\\users\\basti\\documents\\github\\liv-in-paris\\psi_interface\\appcuisinier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E740D2B1-970F-46BE-85E0-A2ACB101DA7B}|PSI_Interface.csproj|solutionrelative:appcuisinier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E740D2B1-970F-46BE-85E0-A2ACB101DA7B}|PSI_Interface.csproj|c:\\users\\basti\\documents\\github\\liv-in-paris\\psi_interface\\commande.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -25,14 +57,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{E740D2B1-970F-46BE-85E0-A2ACB101DA7B}|PSI_Interface.csproj|c:\\users\\basti\\documents\\github\\liv-in-paris\\psi_interface\\ajoutplat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E740D2B1-970F-46BE-85E0-A2ACB101DA7B}|PSI_Interface.csproj|solutionrelative:ajoutplat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E740D2B1-970F-46BE-85E0-A2ACB101DA7B}|PSI_Interface.csproj|C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Interface\\cr\u00E9ationcompte.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E740D2B1-970F-46BE-85E0-A2ACB101DA7B}|PSI_Interface.csproj|solutionrelative:cr\u00E9ationcompte.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E740D2B1-970F-46BE-85E0-A2ACB101DA7B}|PSI_Interface.csproj|C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Interface\\accueil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E740D2B1-970F-46BE-85E0-A2ACB101DA7B}|PSI_Interface.csproj|solutionrelative:accueil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E740D2B1-970F-46BE-85E0-A2ACB101DA7B}|PSI_Interface.csproj|c:\\users\\basti\\documents\\github\\liv-in-paris\\psi_interface\\accueil.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -79,14 +103,6 @@
       "RelativeMoniker": "D:0:0:{E740D2B1-970F-46BE-85E0-A2ACB101DA7B}|PSI_Interface.csproj|solutionrelative:ajoutplat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E740D2B1-970F-46BE-85E0-A2ACB101DA7B}|PSI_Interface.csproj|C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Interface\\apputilisateur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E740D2B1-970F-46BE-85E0-A2ACB101DA7B}|PSI_Interface.csproj|solutionrelative:apputilisateur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E740D2B1-970F-46BE-85E0-A2ACB101DA7B}|PSI_Interface.csproj|c:\\users\\basti\\documents\\github\\liv-in-paris\\psi_interface\\apputilisateur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E740D2B1-970F-46BE-85E0-A2ACB101DA7B}|PSI_Interface.csproj|solutionrelative:apputilisateur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E740D2B1-970F-46BE-85E0-A2ACB101DA7B}|PSI_Interface.csproj|c:\\users\\basti\\documents\\github\\liv-in-paris\\psi_interface\\apputilisateur.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E740D2B1-970F-46BE-85E0-A2ACB101DA7B}|PSI_Interface.csproj|solutionrelative:apputilisateur.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -130,7 +146,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -138,7 +154,70 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Note.cs",
+              "DocumentMoniker": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Interface\\Note.cs",
+              "RelativeDocumentMoniker": "Note.cs",
+              "ToolTip": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Interface\\Note.cs",
+              "RelativeToolTip": "Note.cs",
+              "ViewState": "AgIAAEoAAAAAAAAAAAAowEAAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-05T14:30:40.871Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Note.cs [Conception]",
+              "DocumentMoniker": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Interface\\Note.cs",
+              "RelativeDocumentMoniker": "Note.cs",
+              "ToolTip": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Interface\\Note.cs [Conception]",
+              "RelativeToolTip": "Note.cs [Conception]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-05T14:29:00.226Z",
+              "EditorCaption": " [Conception]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AppAdmin.cs",
+              "DocumentMoniker": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Interface\\AppAdmin.cs",
+              "RelativeDocumentMoniker": "AppAdmin.cs",
+              "ToolTip": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Interface\\AppAdmin.cs",
+              "RelativeToolTip": "AppAdmin.cs",
+              "ViewState": "AgIAAN4AAAAAAAAAAAAuwOkAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T17:59:16.316Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AppUtilisateur.cs [Conception]",
+              "DocumentMoniker": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Interface\\AppUtilisateur.cs",
+              "RelativeDocumentMoniker": "AppUtilisateur.cs",
+              "ToolTip": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Interface\\AppUtilisateur.cs [Conception]",
+              "RelativeToolTip": "AppUtilisateur.cs [Conception]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-04T20:16:10.574Z",
+              "EditorCaption": " [Conception]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AppUtilisateur.cs",
+              "DocumentMoniker": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Interface\\AppUtilisateur.cs",
+              "RelativeDocumentMoniker": "AppUtilisateur.cs",
+              "ToolTip": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Interface\\AppUtilisateur.cs",
+              "RelativeToolTip": "AppUtilisateur.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHMAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-04T01:12:42.739Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "AppAdmin.cs [Conception]",
               "DocumentMoniker": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Interface\\AppAdmin.cs",
               "RelativeDocumentMoniker": "AppAdmin.cs",
@@ -150,68 +229,83 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Accueil.cs [Conception]",
-              "DocumentMoniker": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Interface\\Accueil.cs",
-              "RelativeDocumentMoniker": "Accueil.cs",
-              "ToolTip": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Interface\\Accueil.cs [Conception]",
-              "RelativeToolTip": "Accueil.cs [Conception]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-05T09:57:19.895Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AppAdmin.cs",
-              "DocumentMoniker": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Interface\\AppAdmin.cs",
-              "RelativeDocumentMoniker": "AppAdmin.cs",
-              "ToolTip": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Interface\\AppAdmin.cs",
-              "RelativeToolTip": "AppAdmin.cs",
-              "ViewState": "AgIAAGUAAAAAAAAAAAAAwG4AAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-02T17:59:16.316Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 5,
               "Title": "Cr\u00E9ationCompte.cs [Conception]",
               "DocumentMoniker": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Interface\\Cr\u00E9ationCompte.cs",
               "RelativeDocumentMoniker": "Cr\u00E9ationCompte.cs",
               "ToolTip": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Interface\\Cr\u00E9ationCompte.cs [Conception]",
               "RelativeToolTip": "Cr\u00E9ationCompte.cs [Conception]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-04T01:30:05.105Z"
+              "WhenOpened": "2025-04-04T01:30:05.105Z",
+              "EditorCaption": " [Conception]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AppCuisinier.cs",
-              "DocumentMoniker": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Interface\\AppCuisinier.cs",
-              "RelativeDocumentMoniker": "AppCuisinier.cs",
-              "ToolTip": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Interface\\AppCuisinier.cs",
-              "RelativeToolTip": "AppCuisinier.cs",
-              "ViewState": "AgIAADoAAAAAAAAAAAAUwFgAAAAJAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "Utilisateur.cs",
+              "DocumentMoniker": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Interface\\Utilisateur.cs",
+              "RelativeDocumentMoniker": "Utilisateur.cs",
+              "ToolTip": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Interface\\Utilisateur.cs",
+              "RelativeToolTip": "Utilisateur.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-02T17:52:25.011Z",
+              "WhenOpened": "2025-05-05T12:31:52.141Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 9,
               "Title": "Accueil.cs",
               "DocumentMoniker": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Interface\\Accueil.cs",
               "RelativeDocumentMoniker": "Accueil.cs",
               "ToolTip": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Interface\\Accueil.cs",
               "RelativeToolTip": "Accueil.cs",
-              "ViewState": "AgIAACkAAAAAAAAAAAAYwEcAAAAxAAAAAAAAAA==",
+              "ViewState": "AgIAAEoAAAAAAAAAAAAYwHoAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-05T09:57:25.998Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 10,
+              "Title": "Accueil.cs [Conception]",
+              "DocumentMoniker": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Interface\\Accueil.cs",
+              "RelativeDocumentMoniker": "Accueil.cs",
+              "ToolTip": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Interface\\Accueil.cs [Conception]",
+              "RelativeToolTip": "Accueil.cs [Conception]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-05T09:57:19.895Z",
+              "EditorCaption": " [Conception]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ListeUtilisateurs.cs",
+              "DocumentMoniker": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Interface\\ListeUtilisateurs.cs",
+              "RelativeDocumentMoniker": "ListeUtilisateurs.cs",
+              "ToolTip": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Interface\\ListeUtilisateurs.cs",
+              "RelativeToolTip": "ListeUtilisateurs.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-05T13:02:44.301Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "AppCuisinier.cs",
+              "DocumentMoniker": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Interface\\AppCuisinier.cs",
+              "RelativeDocumentMoniker": "AppCuisinier.cs",
+              "ToolTip": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Interface\\AppCuisinier.cs",
+              "RelativeToolTip": "AppCuisinier.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAYwFgAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T17:52:25.011Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "AjoutPlat.cs",
               "DocumentMoniker": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Interface\\AjoutPlat.cs",
               "RelativeDocumentMoniker": "AjoutPlat.cs",
@@ -224,7 +318,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 12,
               "Title": "Commande.cs",
               "DocumentMoniker": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Interface\\Commande.cs",
               "RelativeDocumentMoniker": "Commande.cs",
@@ -237,7 +331,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 14,
               "Title": "Accueil.Designer.cs",
               "DocumentMoniker": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Interface\\Accueil.Designer.cs",
               "RelativeDocumentMoniker": "Accueil.Designer.cs",
@@ -245,11 +339,12 @@
               "RelativeToolTip": "Accueil.Designer.cs",
               "ViewState": "AgIAAA0AAAAAAAAAAAA1wAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-05T10:03:56.488Z"
+              "WhenOpened": "2025-05-05T10:03:56.488Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 27,
               "Title": "AjoutRecette.cs",
               "DocumentMoniker": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Interface\\AjoutRecette.cs",
               "RelativeDocumentMoniker": "AjoutRecette.cs",
@@ -262,7 +357,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 18,
               "Title": "Trajet.cs [Conception]",
               "DocumentMoniker": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Interface\\Trajet.cs",
               "RelativeDocumentMoniker": "Trajet.cs",
@@ -273,7 +368,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 15,
               "Title": "Trajet.cs",
               "DocumentMoniker": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Interface\\Trajet.cs",
               "RelativeDocumentMoniker": "Trajet.cs",
@@ -285,7 +380,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 17,
               "Title": "Graphe.cs",
               "DocumentMoniker": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Rendu1_2.0\\PSI_Rendu1_2.0\\Graphe.cs",
               "RelativeDocumentMoniker": "..\\PSI_Rendu1_2.0\\PSI_Rendu1_2.0\\Graphe.cs",
@@ -297,7 +392,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 16,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Rendu1_2.0\\PSI_Rendu1_2.0\\Program.cs",
               "RelativeDocumentMoniker": "..\\PSI_Rendu1_2.0\\PSI_Rendu1_2.0\\Program.cs",
@@ -309,7 +404,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 25,
               "Title": "AjoutPlat.cs [Conception]",
               "DocumentMoniker": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Interface\\AjoutPlat.cs",
               "RelativeDocumentMoniker": "AjoutPlat.cs",
@@ -320,7 +415,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 19,
               "Title": "AppCuisinier.cs [Conception]",
               "DocumentMoniker": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Interface\\AppCuisinier.cs",
               "RelativeDocumentMoniker": "AppCuisinier.cs",
@@ -331,7 +426,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 20,
               "Title": "Carte.cs",
               "DocumentMoniker": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Interface\\Carte.cs",
               "RelativeDocumentMoniker": "Carte.cs",
@@ -344,7 +439,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 21,
               "Title": "Carte.cs [Conception]",
               "DocumentMoniker": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Interface\\Carte.cs",
               "RelativeDocumentMoniker": "Carte.cs",
@@ -355,7 +450,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 24,
               "Title": "Commande.cs [Conception]",
               "DocumentMoniker": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Interface\\Commande.cs",
               "RelativeDocumentMoniker": "Commande.cs",
@@ -366,20 +461,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "AppUtilisateur.cs",
-              "DocumentMoniker": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Interface\\AppUtilisateur.cs",
-              "RelativeDocumentMoniker": "AppUtilisateur.cs",
-              "ToolTip": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Interface\\AppUtilisateur.cs",
-              "RelativeToolTip": "AppUtilisateur.cs",
-              "ViewState": "AgIAAD4AAAAAAAAAAAA3wFYAAAA+AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-04T01:12:42.739Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 23,
               "Title": "Noeud.cs",
               "DocumentMoniker": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Rendu1_2.0\\PSI_Rendu1_2.0\\Noeud.cs",
               "RelativeDocumentMoniker": "..\\PSI_Rendu1_2.0\\PSI_Rendu1_2.0\\Noeud.cs",
@@ -391,7 +473,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 22,
               "Title": "Lien.cs",
               "DocumentMoniker": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Rendu1_2.0\\PSI_Rendu1_2.0\\Lien.cs",
               "RelativeDocumentMoniker": "..\\PSI_Rendu1_2.0\\PSI_Rendu1_2.0\\Lien.cs",
@@ -403,30 +485,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 26,
               "Title": "AppUtilisateur.Designer.cs",
               "DocumentMoniker": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Interface\\AppUtilisateur.Designer.cs",
               "RelativeDocumentMoniker": "AppUtilisateur.Designer.cs",
               "ToolTip": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Interface\\AppUtilisateur.Designer.cs",
               "RelativeToolTip": "AppUtilisateur.Designer.cs",
-              "ViewState": "AgIAAEsAAAAAAAAAAAAAAGYAAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAABMAAAAAAAAAAIBJwBYAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-04T20:15:58.789Z"
+              "WhenOpened": "2025-05-04T20:15:58.789Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "AppUtilisateur.cs [Conception]",
-              "DocumentMoniker": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Interface\\AppUtilisateur.cs",
-              "RelativeDocumentMoniker": "AppUtilisateur.cs",
-              "ToolTip": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Interface\\AppUtilisateur.cs [Conception]",
-              "RelativeToolTip": "AppUtilisateur.cs [Conception]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-04T20:16:10.574Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 28,
               "Title": "LivreRecette.cs [Conception]",
               "DocumentMoniker": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Interface\\LivreRecette.cs",
               "RelativeDocumentMoniker": "LivreRecette.cs",
@@ -437,7 +509,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 29,
               "Title": "LivreRecette.cs",
               "DocumentMoniker": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Interface\\LivreRecette.cs",
               "RelativeDocumentMoniker": "LivreRecette.cs",
@@ -449,7 +521,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 30,
               "Title": "Cr\u00E9ationCompte.cs",
               "DocumentMoniker": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Interface\\Cr\u00E9ationCompte.cs",
               "RelativeDocumentMoniker": "Cr\u00E9ationCompte.cs",
@@ -461,7 +533,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 31,
               "Title": "AjoutRecette.cs [Conception]",
               "DocumentMoniker": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Interface\\AjoutRecette.cs",
               "RelativeDocumentMoniker": "AjoutRecette.cs",
@@ -472,7 +544,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 32,
               "Title": "AjoutPlat.Designer.cs",
               "DocumentMoniker": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Interface\\AjoutPlat.Designer.cs",
               "RelativeDocumentMoniker": "AjoutPlat.Designer.cs",
@@ -484,20 +556,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 33,
               "Title": "AppAdmin.Designer.cs",
               "DocumentMoniker": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Interface\\AppAdmin.Designer.cs",
               "RelativeDocumentMoniker": "AppAdmin.Designer.cs",
               "ToolTip": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Interface\\AppAdmin.Designer.cs",
               "RelativeToolTip": "AppAdmin.Designer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGsAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-02T18:06:57.749Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 34,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\basti\\Documents\\GitHub\\Liv-in-Paris\\PSI_Interface\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",

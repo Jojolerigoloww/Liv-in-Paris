@@ -84,7 +84,7 @@ namespace PSI_Interface
 
         private void bt_commander_Click(object sender, EventArgs e)
         {
-            Commande commande = new Commande(nom,prenom,idUser);
+            Commande commande = new Commande(nom, prenom, idUser);
             commande.Show();
             this.Hide();
         }
@@ -97,6 +97,23 @@ namespace PSI_Interface
         private void bt_commande_MouseLeave(object sender, EventArgs e)
         {
             bt_commande.BackColor = Color.FromArgb(250, 191, 80);
+        }
+
+        private void bt_note_MouseEnter(object sender, EventArgs e)
+        {
+            bt_note.BackColor = Color.White;
+        }
+
+        private void bt_note_MouseLeave(object sender, EventArgs e)
+        {
+            bt_note.BackColor = Color.FromArgb(250, 191, 80);
+        }
+
+        private void bt_note_Click(object sender, EventArgs e)
+        {
+            Note note = new Note(nom, prenom, idUser);
+            note.Show();
+            this.Hide();
         }
     }
 }
