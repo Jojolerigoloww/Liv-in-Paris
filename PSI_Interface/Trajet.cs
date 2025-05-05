@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using PSI_Rendu1;
+using System.Globalization;
 
 namespace PSI_Interface
 {
@@ -31,9 +32,34 @@ namespace PSI_Interface
             this.idPlat = idPlat;
         }
 
+        public static string RemoveAccents(string input)
+        {
+            if (string.IsNullOrEmpty(input))
+                return input;
+
+            var normalizedString = input.Normalize(NormalizationForm.FormD);
+            var stringBuilder = new StringBuilder();
+
+            foreach (var c in normalizedString)
+            {
+                var unicodeCategory = CharUnicodeInfo.GetUnicodeCategory(c);
+                if (unicodeCategory != UnicodeCategory.NonSpacingMark)
+                {
+                    stringBuilder.Append(c);
+                }
+            }
+
+            return stringBuilder.ToString().Normalize(NormalizationForm.FormC);
+        }
         private void bt_retour_Click(object sender, EventArgs e)
         {
             AppUtilisateur utilisateur = new AppUtilisateur(nom, prenom, idUser);
+            if (pictureBox.Image != null)
+            {
+                pictureBox.Image.Dispose();
+                pictureBox.Image = null;
+            }
+
             utilisateur.Show();
             this.Hide();
         }
@@ -117,28 +143,32 @@ namespace PSI_Interface
                 }
             }
 
-            try
-            {
-                Graphe graphe = new Graphe();
-                graphe.VisualiserChemin(stationCuisinier, stationClient, "chemin.png");
+            string imagePath = "chemin.png";
 
-                string imagePath = @"C:\Users\basti\Documents\GitHub\Liv-in-Paris\PSI_Rendu1_2.0\PSI_Rendu1_2.0\bin\Debug\net8.0\chemin.png";
-                if (File.Exists(imagePath))
-                {
-                    using (var bmpTemp = new Bitmap(imagePath))
-                    {
-                        pictureBox.Image = new Bitmap(bmpTemp);
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("L'image du trajet n'a pas été trouvée.");
-                }
-            }
-            catch (Exception ex)
+
+            Graphe graphe = new Graphe();
+            graphe.ChargerNoeudsDepuisCSV("MetroParisNoeuds.csv");
+            graphe.ChargerArcsDepuisCSV("MetroParisArcs.csv");
+            if (string.IsNullOrWhiteSpace(stationCuisinier) || string.IsNullOrWhiteSpace(stationClient))
             {
-                MessageBox.Show("Erreur lors de l'exécution du programme : " + ex.Message);
+                MessageBox.Show("Stations manquantes.");
+                return;
             }
+            else { graphe.VisualiserChemin(RemoveAccents(stationCuisinier), RemoveAccents(stationClient), imagePath); }
+
+            if (File.Exists(imagePath))
+            {
+
+                using (var img = Image.FromFile(imagePath))
+                {
+                    pictureBox.Image = (Image)img.Clone(); // Clone pour libérer le fichier
+                }
+            }
+            else
+            {
+                MessageBox.Show("L'image du trajet n'a pas été trouvée.");
+            }
+            
         }
     }
 }

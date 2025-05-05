@@ -106,13 +106,9 @@ namespace PSI_Interface
                     // Requête pour les plats
                     return @"SELECT * FROM Plat";
 
-                case "Notes":
+                case "Clients":
                     // Requête pour les notes
-                    return @"SELECT Client.ID_Client, Cuisinier.ID_Cuisinier, Note.Note, Note.Commentaire
-                            FROM Note
-                            JOIN Client ON Note.ID_Client = Client.ID_Client
-                            JOIN Cuisinier ON Note.ID_Cuisinier = Cuisinier.ID_Cuisinier
-                            ORDER BY note DESC";
+                    return @"SELECT * FROM Client";
 
                 case "Notes Moyennes":
                     // Requête pour les commandes

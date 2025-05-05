@@ -868,13 +868,13 @@ namespace PSI_Rendu1
 
                 /// Sauvegarder l'image
                 using (var image = surface.Snapshot())
-                using (var data = image.Encode(SKEncodedImageFormat.Png, 100))
-                using (var stream = File.OpenWrite(cheminFichier))
+                using (var bitmap = SKBitmap.FromImage(image))
+                using (var fs = new SKFileWStream(cheminFichier))
                 {
-                    data.SaveTo(stream);
+                    bitmap.Encode(fs, SKEncodedImageFormat.Png, 100);
                 }
 
-                Console.WriteLine($"Visualisation du chemin sauvegardée sous : {cheminFichier}");
+                //Console.WriteLine($"Visualisation du chemin sauvegardée sous : {cheminFichier}");
             }
         }
     }
